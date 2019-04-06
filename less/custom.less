@@ -1,0 +1,289 @@
+@white: white;
+@black: black;
+@gray: #dadfe6;
+@grayBkg: #d9dfe6;
+@grayFont: #b6bfcd;
+
+@primaryColor: #062655;
+@secondaryColor: #0d203d;
+@primaryFont: "Barlow";
+
+body {
+  background-color: @white;
+}
+
+header {
+  height: 125px;
+  background-color: @primaryColor;
+}
+
+.header-top {
+  height: 25px;
+  background-color: @secondaryColor;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+nav {
+  height: 55px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.hero {
+  background: url("../img/hero.png"), linear-gradient(to bottom, #1f305b 0, #415580 100%);
+  background-repeat: no-repeat;
+  background-position: top right;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+
+.hero-content h1 {
+  color: @white;
+  padding-top: 150px;
+  padding-bottom: 55px;
+  font-size: 2em;
+  line-height: 1.3em;
+  letter-spacing: 0.1em;
+}
+
+.hero-buttons {
+  padding-bottom: 30px;
+  display: flex;
+}
+
+.hero-brands {
+  color: @white;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+
+a.btn-white {
+  text-decoration: none;
+  &:hover {
+    color: @secondaryColor;
+  }
+}
+
+.btn-white {
+  color: @secondaryColor;
+  font-size: 0.8em;
+  font-weight: 700;
+  background: @white;
+  border-radius: 3px;
+  padding: 17px 55px;
+  margin-right: 20px;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  &:hover {
+    background: @gray;
+  }
+}
+
+#general h2, h3, h4, h5, h6 {
+  text-align: center;
+  letter-spacing: 0.05em;
+  padding-bottom: 5px;
+  color: @primaryColor;
+}
+
+.general-filter {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  & .btn-white {
+    border: 1px @gray solid;
+    margin-right: -1px;
+    margin-left: 0;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.general-grid-item {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  & img {
+    width: 100%;
+  }
+  & a {
+    position: relative;
+    display: block;
+    &:before {
+      content: "";
+      background: @primaryColor none repeat scroll 0 0;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+    }
+  }
+}
+
+.general-grid-caption h3 {
+  display: block;
+  position: absolute;
+  color: @white;
+  margin-left: auto;
+  margin-right: auto;
+  top: 45%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 2;
+}
+
+.general-sonder {
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 70px;
+  color: white;
+  background: url("../img/rolle2.jpg");
+  background-position: 80% 0;
+  background-repeat: no-repeat;
+  mix-blend-mode: darken;
+  padding-bottom: 50px;
+  &:before {
+    content: "";
+    background: @primaryColor none repeat scroll 0 0;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+  }
+  & h3 {
+    padding-top: 30px;
+    padding-left: 40px;
+  }
+  & .btn-white {
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+}
+
+.small-carousel {
+  justify-content: center;
+  margin-bottom: 70px;
+  & img {
+    width: 100%;
+    margin: 20px auto auto auto;
+  }
+}
+
+.product-carousel {
+  justify-content: center;
+  margin-bottom: 70px;
+  & img {
+    width: 100%;
+    margin: 20px auto 20px auto;
+  }
+  & a {
+    text-decoration: none;
+    color: @secondaryColor;
+  }
+  & h4 {
+    text-align: left;
+  }
+  & span.product-description {
+    font-size: 0.8em;
+    font-weight: 500;
+  }
+}
+
+.product-price-box {
+  font-size: 1.2em;
+  font-weight: 600;
+  &:after {
+    content: "exkl. MwSt";
+    font-size: 0.7em;
+    font-weight: 500;
+  }
+}
+
+.big-grid {
+  margin-bottom: 70px;
+  & .general-grid-caption h3 {
+    font-size: 1.5em;
+  }
+}
+
+#services {
+  background: @grayBkg;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  margin-bottom: 70px;
+  & h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: @primaryColor;
+  }
+  & h3 {
+    font-weight: 400;
+  }
+  & img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75px;
+    display: block;
+  }
+  & .service-description {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: @primaryColor;
+    text-align: center;
+    padding: 0 30px 0 30px;
+    margin-bottom: 15px;
+  }
+  & a.btn-blue {
+    color: @white;
+    font-size: 0.8em;
+    font-weight: 700;
+    background: @primaryColor;
+    border-radius: 3px;
+    padding: 17px 55px;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+    text-align: center;
+    &:hover {
+      background: @white;
+      color: @primaryColor;
+      border: 1px solid @primaryColor;
+    }
+  }
+}
+
+#usps {
+  padding-top: 20px;
+  margin-bottom: 30px;
+  & h3 {
+    font-weight: 400;
+    text-align: left;
+  }
+  & p {
+    font-size: 0.85em;
+    font-weight: 500;
+  }
+  & .payments {
+    padding-top: 80px;
+    display: flex;
+    justify-content:space-bettween {}
+    & span.paymethod {
+      background: #f2f4f6;
+      font-size: 0.8em;
+      padding: 4px 13px 4px 13px;
+      border-radius: 2px;
+      font-weight: 500;
+    }
+  }
+}
