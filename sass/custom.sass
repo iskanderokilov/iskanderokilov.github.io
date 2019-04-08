@@ -42,6 +42,7 @@ nav
 	font-size: 2em
 	line-height: 1.3em
 	letter-spacing: 0.1em
+	font-weight: 700
 .hero-buttons
 	padding-bottom: 30px
 	display: flex
@@ -50,6 +51,8 @@ nav
 	text-align: center
 	padding-top: 60px
 	padding-bottom: 30px
+	& span
+		color: $white
 a.btn-white
 	text-decoration: none
 	&:hover
@@ -60,7 +63,7 @@ a.btn-white
 	font-weight: 700
 	background: $white
 	border-radius: 3px
-	padding: 17px 55px
+	padding: 17px 5%
 	margin-right: 20px
 	text-decoration: none
 	letter-spacing: .1em
@@ -129,6 +132,7 @@ a.btn-white
 	& h3
 		padding-top: 30px
 		padding-left: 40px
+		color: $white
 	& .btn-white
 		margin-left: 40px
 		margin-top: 10px
@@ -200,10 +204,10 @@ a.btn-white
 		display: block
 		width: fit-content
 		text-align: center
+		border: 1px solid $primaryColor
 		&:hover
 			background: $white
-			color: $primaryColor
-			border: 1px solid $primaryColor
+			color: $primaryColor			
 #usps
 	padding-top: 20px
 	margin-bottom: 30px
