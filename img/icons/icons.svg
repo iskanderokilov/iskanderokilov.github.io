@@ -1,0 +1,11 @@
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19" id="account_icon">
+    <path d="M9.5 9.5c-2.624 0-4.75-2.126-4.75-4.75S6.876 0 9.5 0a4.75 4.75 0 1 1 0 9.5zm0 2.375c5.248 0 9.5 2.138 9.5 4.75V19H0v-2.375c0-2.612 4.251-4.75 9.5-4.75z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19" id="basket_icon">
+    <path d="M14.25 1.949v2.436H19V19H0V4.385h4.75V0h9.5v1.949zM12 4V2H7v2h5z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 19" id="wishlist_icon">
+    <path d="M0 19V0h15v19l-7.5-4.33z"></path>
+  </symbol>
+</svg>
