@@ -1,25 +1,33 @@
 @white: white;
 @black: black;
-@gray: #dadfe6;
-@grayBkg: #d9dfe6;
-@grayFont: #b6bfcd;
+@grey: #dadfe6;
+@color-border: #dadfe6;
+@grey-backround: #d9dfe6;
+@color-font-grey: #b6bfcd;
 
-@primaryColor: #062655;
-@secondaryColor: #0d203d;
-@primaryFont: "Barlow";
+@color-main-one: #062655;
+@color-main-dark: #0d203d;
+@color-main-two: #203d65;
+@default-font: "Barlow";
 
 body {
   background-color: @white;
+  font-family: @default-font
 }
 
+.cms-index-index {
+	& #maincontent {
+		max-width: 100%;
+	}
+}
 header {
   height: 125px;
-  background-color: @primaryColor;
+  background-color: @color-main-one;
 }
 
 .header-top {
   height: 25px;
-  background-color: @secondaryColor;
+  background-color: @color-main-dark;
 }
 
 .container-fluid {
@@ -49,6 +57,7 @@ nav {
   font-size: 2em;
   line-height: 1.3em;
   letter-spacing: 0.1em;
+  font-weight: 700;
 }
 
 .hero-buttons {
@@ -59,45 +68,146 @@ nav {
 .hero-brands {
   color: @white;
   text-align: center;
-  padding-top: 60px;
-  padding-bottom: 30px;
+  padding-top: 50px;
+  padding-bottom: 15px;
+  & span {
+    color: @white;
+  }
+  & img {
+	height: 58px;
+  }
 }
 
 a.btn-white {
   text-decoration: none;
   &:hover {
-    color: @secondaryColor;
+    color: @color-main-dark;
   }
 }
 
 .btn-white {
-  color: @secondaryColor;
+  color: @color-main-dark;
   font-size: 0.8em;
   font-weight: 700;
   background: @white;
   border-radius: 3px;
-  padding: 17px 55px;
+  padding: 15px 56px;
   margin-right: 20px;
   text-decoration: none;
   letter-spacing: 0.1em;
+  @media (max-width: 576px){
+	padding: 15px 5%;
+	}
   &:hover {
-    background: @gray;
+    background: @grey;
   }
 }
 
-#general h2, h3, h4, h5, h6 {
+#general {
+  & h2, h3, h4, h5, h6 {
   text-align: center;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   padding-bottom: 5px;
-  color: @primaryColor;
+  color: @color-main-one;
+  line-height: 1.65;
+  }
+  & h2 {
+	font-size: 1.5em;
+	font-weight: 700;
+  }
+  & .product-carousel h4 {
+    text-align: left;
+	padding-top: 10px;
+	padding-bottom: 0;
+	margin-bottom: -10px;
+  }
+  & .general-sonder h3 {
+    padding-top: 30px;
+    padding-left: 40px;
+    color: @white;
+	text-align: left;
+	padding-bottom: 0;
+  }
+  & .general-grid-caption h3 {
+	display: block;
+	position: absolute;
+	color: @white;
+	margin-left: auto;
+	margin-right: auto;
+	top: 45%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 2;	
+  }
+}
+  .general-grid-caption {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: #f6f6f6;
+    background: rgb(6, 38, 85);
+    opacity: 0.7;
+    transition: all 350ms ease-in;
+    z-index: 2;
+
+}
+
+a.btn-blue {
+    color: @white;
+    font-size: 0.8em;
+    font-weight: 700;
+    background: @color-main-one;
+    border-radius: 3px;
+    padding: 15px 55px;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+    text-align: center;
+    border: 1px solid @color-main-one;
+    &:hover {
+      background: @color-main-one;
+      color: @white;
+    }
+  }
+
+a.product-info-button {
+    transition: all 350ms;
+    opacity: 0;
+    z-index: 2;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: -90px;
+    left: 0;
+    right: 0;
+    max-width: fit-content;
+}
+
+.product:hover .general-grid-caption {
+	opacity: 0;		   
+	}
+.product:hover a.product-info-button {
+	opacity: 1;
 }
 
 .general-filter {
   text-align: center;
+  flex-direction:column;
   display: flex;
   justify-content: center;
   & .btn-white {
-    border: 1px @gray solid;
+    border: 1px @grey solid;
     margin-right: -1px;
     margin-left: 0;
     &:focus {
@@ -105,10 +215,130 @@ a.btn-white {
     }
   }
 }
+.filters {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  flex: 1 1 auto;
+  margin-right: -1px;
+  margin-left: 0;
+   &:focus {
+     outline: none;
+    }
+  }
+
+  .filters-item, .filters-item2 {
+  color: @color-main-dark;
+  font-size: 0.8em;
+  font-weight: 700;
+  background: @white;
+  border: 1px solid @grey;
+  border-radius: 3px;
+  padding: 15px 56px;
+  margin-right: -1px;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  @media (max-width: 576px){
+	padding: 15px 5%;
+	}
+  &:hover {
+    background: @grey;
+	color: inherit;
+  }
+}
+.filters-item.active, .filters-item2.active {
+  color: inherit;
+  transition: all 350ms;
+  background: @grey;
+}
+a.filters-item, a.filters-item2 {
+  text-decoration: none;	
+}
+.products, .products2 {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content:space-between;
+}
+.product {
+  position: relative;
+  flex: 1 0 calc(100% - 20px);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  &:hover ~ .general-grid-caption {
+		opacity: 0;
+	}
+  }
+.products2 .product {
+	padding: 10px;
+	margin-bottom: -20px;
+	& img {
+		max-width:333px;
+	}
+}
+
+@media (min-width: 520px) {
+  .product {
+    flex: 0 0 calc((100% / 2) - 20px);
+  }
+
+}
+@media (min-width: 860px) {
+  .product {
+    flex: 0 0 calc((100% / 3) - 20px);
+  }
+  .products2 .product {
+    flex: 0 0 calc((100% / 2) - 20px);
+    & img {
+    max-width: 170px;
+	}
+	}
+}
+@media (min-width: 1024px) {
+	.products2 {
+		padding-left: 100px;
+		padding-right: 100px;
+	}
+	 .products2 .product {
+    flex: 0 0 calc((100% / 4) - 20px);
+    & img {
+    max-width: 170px;
+	}
+  }
+}
+.product-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.general-small-carousel{
+	margin-bottom: 90px;
+	& .general-filter {
+		margin-top: 30px;
+	}
+	& .img-box {
+		background: #f2f4f6;
+	}
+}
+
+.general-product-carousel {
+	margin-bottom: 130px;
+	& h2 {
+		margin-bottom: 15px;
+	}	
+}
+
+.general-grid {
+margin-bottom: 30px;
+margin-top: 3px;
+}
 
 .general-grid-item {
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   & img {
     width: 100%;
   }
@@ -117,7 +347,7 @@ a.btn-white {
     display: block;
     &:before {
       content: "";
-      background: @primaryColor none repeat scroll 0 0;
+      background: @color-main-one none repeat scroll 0 0;
       position: absolute;
       z-index: 1;
       width: 100%;
@@ -126,42 +356,29 @@ a.btn-white {
     }
   }
 }
-
-.general-grid-caption h3 {
-  display: block;
-  position: absolute;
-  color: @white;
-  margin-left: auto;
-  margin-right: auto;
-  top: 45%;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 2;
-}
-
 .general-sonder {
   position: relative;
   margin-top: 40px;
-  margin-bottom: 70px;
+  margin-bottom: 95px;
   color: white;
   background: url("../img/rolle2.jpg");
   background-position: 80% 0;
   background-repeat: no-repeat;
   mix-blend-mode: darken;
-  padding-bottom: 50px;
+  padding-bottom: 45px;
   &:before {
     content: "";
-    background: @primaryColor none repeat scroll 0 0;
+    background: @color-main-one none repeat scroll 0 0;
     position: absolute;
     z-index: -1;
     width: 100%;
     height: 100%;
     opacity: 0.85;
   }
-  & h3 {
-    padding-top: 30px;
-    padding-left: 40px;
+  & ul {
+	padding-left: 55px;
+	line-height: 1.5em;
+	margin-bottom: 30px;
   }
   & .btn-white {
     margin-left: 40px;
@@ -172,26 +389,22 @@ a.btn-white {
 
 .small-carousel {
   justify-content: center;
-  margin-bottom: 70px;
   & img {
     width: 100%;
     margin: 20px auto auto auto;
+	mix-blend-mode: exclusion;
   }
 }
 
 .product-carousel {
   justify-content: center;
-  margin-bottom: 70px;
   & img {
     width: 100%;
     margin: 20px auto 20px auto;
   }
   & a {
     text-decoration: none;
-    color: @secondaryColor;
-  }
-  & h4 {
-    text-align: left;
+    color: @color-main-dark;
   }
   & span.product-description {
     font-size: 0.8em;
@@ -202,6 +415,7 @@ a.btn-white {
 .product-price-box {
   font-size: 1.2em;
   font-weight: 600;
+  margin-top: 15px;
   &:after {
     content: "exkl. MwSt";
     font-size: 0.7em;
@@ -211,19 +425,26 @@ a.btn-white {
 
 .big-grid {
   margin-bottom: 70px;
+  margin-top: 20px;
   & .general-grid-caption h3 {
     font-size: 1.5em;
   }
 }
 
 #services {
-  background: @grayBkg;
+  background: @grey-backround;
   padding-top: 40px;
-  padding-bottom: 50px;
-  margin-bottom: 70px;
+  padding-bottom: 60px;
+  margin-bottom: 80px;
   & h2, h3, h4, h5, h6 {
     text-align: center;
-    color: @primaryColor;
+    color: @color-main-one;
+	letter-spacing: .04em;
+    line-height: 1.65;
+	}
+  & h2 {
+	font-size: 1.5em;
+	font-weight: 700;	
   }
   & h3 {
     font-weight: 400;
@@ -233,39 +454,38 @@ a.btn-white {
     margin-right: auto;
     width: 75px;
     display: block;
+	margin-bottom: 20px;
   }
   & .service-description {
     font-size: 0.8em;
     font-weight: 500;
-    color: @primaryColor;
+    color: @color-main-one;
     text-align: center;
     padding: 0 30px 0 30px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
-  & a.btn-blue {
-    color: @white;
-    font-size: 0.8em;
-    font-weight: 700;
-    background: @primaryColor;
-    border-radius: 3px;
-    padding: 17px 55px;
-    text-decoration: none;
-    letter-spacing: 0.1em;
-    margin: 0 auto;
-    display: block;
-    width: fit-content;
-    text-align: center;
-    &:hover {
-      background: @white;
-      color: @primaryColor;
-      border: 1px solid @primaryColor;
-    }
+  & .service-img {
+	text-align:center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+  }
+  & [class^="icon-"] {
+	font-size: 50px;
+	color: @color-main-one;
   }
 }
 
 #usps {
   padding-top: 20px;
   margin-bottom: 30px;
+  & h2, h3, h4, h5, h6 {
+	letter-spacing: .04em;
+	line-height: 1.65;
+	}
+  & h2 {
+	font-size: 1.5em;
+	font-weight: 700;
+  } 
   & h3 {
     font-weight: 400;
     text-align: left;
@@ -275,15 +495,17 @@ a.btn-white {
     font-weight: 500;
   }
   & .payments {
-    padding-top: 80px;
+    padding-top: 135px;
     display: flex;
-    justify-content:space-bettween {}
+	flex-wrap: wrap;
+    justify-content: space-between;
     & span.paymethod {
       background: #f2f4f6;
       font-size: 0.8em;
       padding: 4px 13px 4px 13px;
       border-radius: 2px;
       font-weight: 500;
+	  margin: 5px;
     }
   }
 }
