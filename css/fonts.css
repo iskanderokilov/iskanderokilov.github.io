@@ -9,6 +9,7 @@
   font-style: normal;
 }
 
+
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
@@ -24,6 +25,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-partner_2:before {
+  content: "\e912";
+}
+.icon-experten_2:before {
+  content: "\e913";
+}
+.icon-edit:before {
+  content: "\e914";
+}
+.icon-delete:before {
+  content: "\e915";
+}
+.icon-support_2:before {
+  content: "\e916";
+}
 .icon-experten_1:before {
   content: "\e90f";
 }
