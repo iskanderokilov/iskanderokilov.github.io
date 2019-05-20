@@ -7,6 +7,7 @@
 		<!-- <base href="/"> -->
 		
 		<title>Thermotransferdrucker</title>
+		<title>Thermotransferdrucker</title>
 		<meta name="description" content="">
 		
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,11 +23,11 @@
 		<meta name="theme-color" content="#000">
 		<!-- Custom Browsers Color End -->
 		
-		<link rel="stylesheet" href="css/main.min.css">
+		<!-- <link rel="stylesheet" href="css/main.min.css"> -->
 		<link rel="stylesheet" href="css/custom.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Barlow:400,400i,500,500i,700,700i" rel="stylesheet">
-		<link rel="stylesheet" href="css/fonts.css">
-		
+		<!-- <link href="https://fonts.googleapis.com/css?family=Barlow:400,400i,500,500i,700,700i" rel="stylesheet"> -->
+		<link rel="stylesheet" href="css/fonts.css">	
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> -->
 	</head>
 	
 	<body>
@@ -34,31 +35,90 @@
 			<!-- Custom HTML -->
 			<header>
 				<div class="header-top">
-					<div class="container">
-						<div class="row">
-							
-						</div>
+					
+					<div class="panel service">
+						<ul class="service-list">
+							<li class="service-element">By Labelident</li>
+							<li class="service-element">Freier Versand ab 29€</li>
+							<li class="service-element">Kauf auf Rechnung</li>
+							<li class="service-element">Über 1250.000 zufriedene Kunden</li>
+							<li class="service-element">Über 80 ver. Etikettenmaterialien</li>
+						</ul>
 					</div>
 				</div>
 				<div class="header-bottom">
-					<div class="container">
-						<div class="row">
+					<div class="header content">
+						<span class="nav-toggle">
+							<span>Toggle Nav</span>
+						</span>
+						<a class="logo" href="#" title="Thermotransferdrucker.net - Onlineshop">
+							<img src="img/logo_tt_white.png" title="Thermotransferdrucker.net - Onlineshop" alt="Thermotransferdrucker.net - Onlineshop">
+						</a>	
+						<div class="block block-search">
+							<div class="block block-title"><strong>Suche</strong></div>
+							<div class="block block-content">
+								<form class="form search" id="search_form">
+									<div class="field search">
+										<div class="control">
+											<div class="wrapper-input"><input id="search" type="text" name="q" value="" placeholder="Gesamten Shop durchsuchen..." class="input-text" maxlength="128"></div>
+										</div>										
+									</div>
+									<div class="actions">
+										<button type="submit" title="Suche" class="action search" disabled="">
+											<span>Suche</span>
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						
+						<div class="link__container-action account__link">
+							<a class="link account__link" href="#">
+								<span class="icon icon-account"></span>
+								<span class="text">Mein Konto </span>
+							</a>
+						</div>
+						<div class="link__container-action wishlist__link">
+							<a class="link wishlist__link" href="#">
+								<span class="icon icon-wishlist"></span>
+								<span class="text">Merkzettel </span>
+							</a>
+						</div>
+						
+						<div class="link__container-action cart__link">
+							<a class="link cart__link" href="#">			
+								<span class="icon icon-basket"></span>
+								<span class="text">Warenkorb</span>
+								<span class="counter qty empty">
+									<span class="counter-number"><!-- ko text: getCartParam('summary_count') -->2<!-- /ko --></span>
+									<span class="counter-label"></span>
+								</span>
+							</a>
 							
 						</div>
+						
 					</div>
 				</div>
 			</header>
 			
 			<nav>
-				
-				<!--Navigation here!!-->
-				
+				<div class="container">
+					<ul class="nav">
+						<li class="nav-item"><a href="#">Drucker</a></li>
+						<li class="nav-item"><a href="#">Etiketten</a></li>
+						<li class="nav-item"><a href="#">Thermotransferfolie</a></li>
+						<li class="nav-item"><a href="#">Barcode Scanner</a></li>
+						<li class="nav-item"><a href="#">Software</a></li>
+						<li class="nav-item"><a href="#">Zubehör</a></li>
+						<li class="nav-item"><a href="#">Service</a></li>
+					</ul>
+				</div>
 			</nav>
 			<div class="container">
 				<div class="hero">				
 					<div class="hero-content">
-						<div class="row">
-							<div class="offset-1 col-111 col-md-9 col-lg-9 col-xl-6">
+						<div class="hero-caption-box">
+							<div class="hero-caption">
 								<h1>Wir bitten Ihnen alles,<br>was Sie zum Kennzeichnen brauchen</h1>
 								<div class="hero-buttons">
 									<a href="#" class="btn btn-white">Drucker kaufen</a>
@@ -66,13 +126,13 @@
 								</div>
 							</div>
 						</div>
-						<div class="row d-none d-sm-none d-md-flex hero-brands">
-							<div class="col-md-2 offset-md-1"><img alt="cab logo" src="img/cab_logo.png"></div>
-							<div class="col-md-2"><img alt="godex logo" src="img/godex_logo.png"></div>
-							<div class="col-md-2"><img alt="labelident logo" src="img/labelident_logo.png"></div>
-							<div class="col-md-2"><img alt="tsc logo" src="img/tsc_logo.png"></div>
-							<div class="col-md-2"><img alt="zebra logo" src="img/zebra_logo.png"></div>
-						</div>
+						<ul class="hero-brands">
+							<li class="brand-mini"><img alt="cab logo" src="img/cab_logo.png"></li>
+							<li class="brand-mini"><img alt="godex logo" src="img/godex_logo.png"></li>
+							<li class="brand-mini"><img alt="labelident logo" src="img/labelident_logo.png"></li>
+							<li class="brand-mini"><img alt="tsc logo" src="img/tsc_logo.png"></li>
+							<li class="brand-mini"><img alt="zebra logo" src="img/zebra_logo.png"></li>
+						</ul>
 					</div>				
 				</div>
 			</div>
@@ -82,13 +142,13 @@
 						
 						
 						<div class="filter general-filter">
-							<div class="filters">
+							<!-- 			<div class="filters">
 								<a href="#" class="filters-item" data-rel="option-1">Nach Material</a>
 								<a href="#" class="filters-item active" data-rel="option-2">Nach Anwendung</a>
 								<a href="#" class="filters-item" data-rel="option-3">Nach Untergrund</a>
-							</div>
+							</div> -->
 							
-							<ul class="products">
+							<ul class="products products1">
 								<li class="product option-2">
 									<div class="product-image"><img src="img/versand-etiketten3.jpg" alt="Versandetiketten" /></div>
 									<div class="general-grid-caption">
@@ -234,85 +294,17 @@
 								</li>
 							</ul>
 						</div>
-						<!-- <div>	
-							<div class="filter general-filter">
-							<button class="btn-white" href="" data-rel="materials">Nach Material</button>
-							<button class="btn-white" href="" data-rel="anwendungen">Nach Anwendung</button>
-							<button class="btn-white" href="" data-rel="untergrund">Nach Untergrund</button>						
+						<div class="sonder">
+							<div class="general-sonder">
+								<h3>Sonderanfertigungen - individuell, schnell & hochwertig</h3>
+								<ul>
+									<li>freie Formatwahl</li>
+									<li>mehr als 80 Etikettenmaterialien</li>
+									<li>in 2-3 Tagen versandfertig</li>
+								</ul>
+								<a href="#" class="btn btn-white">Mehr erfahren</a>
 							</div>
-							
-							<div class="row general-grid">
-							<div class="col-12 col-sm-6 col-md-4">
-							<div class="general-grid-item">
-							<a href="#"><img class="img-responsive" src="img/versand-etiketten3.jpg" alt="versand-etiketten">
-							<div class="general-grid-caption">
-							<h3>Versand & Lieferung</h3>
-							</div>
-							</a>
-							</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-4">
-							<div class="general-grid-item">
-							<a href="#"><img class="img-responsive" src="img/lager-etiketten3.jpg" alt="lager-etiketten">
-							<div class="general-grid-caption">
-							<h3>Lager & Logistik</h3>				
-							</div>
-							</a>
-							</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-4">
-							<div class="general-grid-item">
-							<a href="#"><img class="img-responsive" src="img/inventar-etiketten3.jpg" alt="inventar-etiketten">
-							<div class="general-grid-caption">
-							<h3>Eigentum & Inventar</h3>					
-							</div>
-							</a>
-							</div>
-							</div>
-							
-							<div class="col-12 col-sm-6 col-md-4">
-							<div class="general-grid-item">
-							<a href="#"><img class="img-responsive" src="img/industrie-etiketten3.jpg" alt="industrie-etiketten">
-							<div class="general-grid-caption">
-							<h3>Maschinen & Industrie</h3>
-							</div>
-							</a>
-							</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-4">
-							<div class="general-grid-item">
-							<a href="#"><img class="img-responsive" src="img/wetter-etiketten3.jpg" alt="wetter-etiketten">
-							<div class="general-grid-caption">
-							<h3> Wind & Wetter</h3>			
-							</div>
-							</a>
-							</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-4">
-							<div class="general-grid-item">
-							<a href="#"><img class="img-responsive" src="img/industrie-etiketten3.jpg" alt="schmuck-etiketten">
-							<div class="general-grid-caption">
-							<h3>Schmuck & Brillen</h3>				
-							</div>
-							</a>
-							</div>
-							</div>
-							</div>
-						</div> -->
-						<div class="row">
-							<div class="col-12">
-								<div class="filter general-sonder">
-									<h3>Sonderanfertigungen - individuell, schnell & hochwertig</h3>
-									<ul>
-										<li>freie Formatwahl</li>
-										<li>mehr als 80 Etikettenmaterialien</li>
-										<li>in 2-3 Tagen versandfertig</li>
-									</ul>
-									<a href="#" class="btn btn-white">Mehr erfahren</a>
-								</div>
-							</div>
-						</div>
-						
+						</div>							
 						<div class="filter general-filter general-small-carousel">
 							<div class="filters">
 								<a href="#" class="filters-item2" data-rel="option-4">Nach Qualität</a>
@@ -320,7 +312,7 @@
 								<a href="#" class="filters-item2" data-rel="option-6">Nach Lauflänge</a>
 							</div>
 							
-							<ul class="products2 small-carousel">
+							<ul class="products products2 small-carousel">
 								<li class="product option-5">
 									<a href="#"><div class="img-box"><img class="img-responsive" src="img/labelident_logo.png" alt=""></div></a>
 								</li>
@@ -372,164 +364,317 @@
 							</ul>
 						</div>
 						
-						<!-- 					<div class="general-small-carousel">
-							<h2>Thermotransferfolien</h2>
-							<div class="filter general-filter">
-							<button class="btn-white" href="" data-rel="qualitaet">Nach Qualität</button>
-							<button class="btn-white" href="" data-rel="hersteller">Nach Hersteller</button>
-							<button class="btn-white" href="" data-rel="lauflaenge">Nach Lauflänge</button>						
-							</div>	
-							<div class="small-carousel">
-							<div class="row">				
-							<div class="col-12 col-sm-6 col-lg-2 offset-lg-2"><a href="#"><div class="img-box"><img class="img-responsive" src="img/labelident_logo.png" alt=""></div></a></div>
-							<div class="col-12 col-sm-6 col-lg-2"><a href="#"><div class="img-box"><img class="img-responsive" src="img/tsc_logo.png" alt=""></div></a></div>
-							<div class="col-12 col-sm-6 col-lg-2"><a href="#"><div class="img-box"><img class="img-responsive" src="img/godex_logo.png" alt=""></div></a></div>
-							<div class="col-12 col-sm-6 col-lg-2"><a href="#"><div class="img-box"><img class="img-responsive" src="img/zebra_logo.png" alt=""></div></a></div>
-							</div>
-							</div>
-						</div> -->
+						
+						<!-- 	start general product carousel -->
+						
+						
 						<div class="general-product-carousel">
 							<h2>Über 750 Drucker für den Desktop- & Industriebereich</h2>
 							<h5>Welchen Drucker brauche ich?</h5>
-							<div class="filter general-filter">
-								<button class="btn-white" href="" data-rel="qualitaet">Thermotransferdrucker</button>
-								<button class="btn-white" href="" data-rel="hersteller">Thermodirektdrucker</button>					
-							</div>	
-							
-							<!-- product carousel here -->
-							
-							<div class="product-carousel">
-								<div class="row">				
-									<div class="col-12 col-md-4">
-										<div class="product">
-											<div class="product-image-area">
-												<a href="#"><img class="img-responsive" src="img/product1.jpg" alt=""></a>
-											</div>
-											<div class="product-details-area">
-												<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
-												<span class="product-description">
-													Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
-												</span>
-												<div class="product-price-box">
-													<span class="product-price">15,65 €</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-12 col-md-4">
-										<div class="product">
-											<div class="product-image-area">
-												<a href="#"><img class="img-responsive" src="img/product1.jpg" alt=""></a>
-											</div>
-											<div class="product-details-area">
-												<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
-												<span class="product-description">
-													Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
-												</span>
-												<div class="product-price-box">
-													<span class="product-price">15,65 €</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-12 col-md-4">
-										<div class="product">
-											<div class="product-image-area">
-												<a href="#"><img class="img-responsive" src="img/product1.jpg" alt=""></a>
-											</div>
-											<div class="product-details-area">
-												<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
-												<span class="product-description">
-													Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
-												</span>
-												<div class="product-price-box">
-													<span class="product-price">15,65 €</span>
-												</div>
-											</div>
-										</div>
-									</div>
+							<div class="filter general-filter product-carousel">
+								<div class="filters">
+									<a href="#" class="filters-item3 active" data-rel="option-7">Thermodirektdrucker</a>
+									<a href="#" class="filters-item3" data-rel="option-8">Thermotransferdrucker</a>
 								</div>
-							</div>
+								
+								<ul class="products products3 product-carousel">
+									<li class="product option-7 owl-carousel owl-theme">
+										<div class="item">
+											<div class="product">
+												<div class="product-image-area">
+													<a href="#"><img class="img-responsive" src="img/product1.jpg" alt=""></a>
+												</div>
+												<div class="product-details-area">
+													<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
+													<span class="product-description">
+														Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
+													</span>
+													<div class="product-price-box">
+														<span class="product-price">15,65 €</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="item">
+												<div class="product">
+													<div class="product-image-area">
+														<a href="#"><img class="img-responsive" src="img/product1.jpg" alt=""></a>
+													</div>
+													<div class="product-details-area">
+														<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
+														<span class="product-description">
+															Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
+														</span>
+														<div class="product-price-box">
+															<span class="product-price">15,65 €</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="item">
+												<div class="product">
+													<div class="product-image-area">
+														<a href="#"><img class="img-responsive" src="img/product1.jpg" alt=""></a>
+													</div>
+													<div class="product-details-area">
+														<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
+														<span class="product-description">
+															Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
+														</span>
+														<div class="product-price-box">
+															<span class="product-price">15,65 €</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="item">
+												<div class="product">
+													<div class="product-image-area">
+														<a href="#"><img class="img-responsive" src="img/product1.jpg" alt=""></a>
+													</div>
+													<div class="product-details-area">
+														<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
+														<span class="product-description">
+															Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
+														</span>
+														<div class="product-price-box">
+															<span class="product-price">15,65 €</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="item">
+												<div class="product">
+													<div class="product-image-area">
+														<a href="#"><img class="img-responsive" src="img/product1.jpg" alt=""></a>
+													</div>
+													<div class="product-details-area">
+														<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
+														<span class="product-description">
+															Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
+														</span>
+														<div class="product-price-box">
+															<span class="product-price">15,65 €</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="item">
+												<div class="product">
+													<div class="product-image-area">
+														<a href="#"><img class="img-responsive" src="img/product1.jpg" alt=""></a>
+													</div>
+													<div class="product-details-area">
+														<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
+														<span class="product-description">
+															Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
+														</span>
+														<div class="product-price-box">
+															<span class="product-price">15,65 €</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="product option-8 owl-carousel owl-theme">
+										<div class="item">
+											<div class="product">
+												<div class="product-image-area">
+													<a href="#"><img class="img-responsive" src="img/product2.jpg" alt=""></a>
+												</div>
+												<div class="product-details-area">
+													<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
+													<span class="product-description">
+														Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
+													</span>
+													<div class="product-price-box">
+														<span class="product-price">15,65 €</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="item">
+												<div class="product">
+													<div class="product-image-area">
+														<a href="#"><img class="img-responsive" src="img/product3.jpg" alt=""></a>
+													</div>
+													<div class="product-details-area">
+														<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
+														<span class="product-description">
+															Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
+														</span>
+														<div class="product-price-box">
+															<span class="product-price">15,65 €</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="item">
+												<div class="product">
+													<div class="product-image-area">
+														<a href="#"><img class="img-responsive" src="img/product4.jpg" alt=""></a>
+													</div>
+													<div class="product-details-area">
+														<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
+														<span class="product-description">
+															Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
+														</span>
+														<div class="product-price-box">
+															<span class="product-price">15,65 €</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="item">
+												<div class="product">
+													<div class="product-image-area">
+														<a href="#"><img class="img-responsive" src="img/product2.jpg" alt=""></a>
+													</div>
+													<div class="product-details-area">
+														<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
+														<span class="product-description">
+															Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
+														</span>
+														<div class="product-price-box">
+															<span class="product-price">15,65 €</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="item">
+												<div class="product">
+													<div class="product-image-area">
+														<a href="#"><img class="img-responsive" src="img/product3.jpg" alt=""></a>
+													</div>
+													<div class="product-details-area">
+														<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
+														<span class="product-description">
+															Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
+														</span>
+														<div class="product-price-box">
+															<span class="product-price">15,65 €</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="item">
+												<div class="product">
+													<div class="product-image-area">
+														<a href="#"><img class="img-responsive" src="img/product4.jpg" alt=""></a>
+													</div>
+													<div class="product-details-area">
+														<h4 class="product-name"><a href="#" title="Tiefkühletiketten">Tiefkühletiketten</a></h4>
+														<span class="product-description">
+															Papier, Spezialklebstoff(Tiefkühlanwendung), 1" Rollenkern, 2000 Etiketten, 2 Rolle(n)
+														</span>
+														<div class="product-price-box">
+															<span class="product-price">15,65 €</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>							
 						</div>
+						<!-- product carousel end -->
+						
 						<h2>Komplettlösungen nach Anwendungsgebieten</h2>
 						
-						<div class="row big-grid">
-							<div class="col-12 col-sm-6 col-md-6">
-								<div class="general-grid-item">
-									<a href="#"><img class="img-responsive" src="img/versand-etiketten3.jpg" alt="versand-etiketten">
-										<div class="general-grid-caption">
-											<h3>Versand & Lieferung</h3>
-										</div>
-									</a>
-								</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-6">
-								<div class="general-grid-item">
-									<a href="#"><img class="img-responsive" src="img/lager-etiketten3.jpg" alt="lager-etiketten">
-										<div class="general-grid-caption">
-											<h3>Lager & Logistik</h3>				
-										</div>
-									</a>
-								</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-6">
-								<div class="general-grid-item">
-									<a href="#"><img class="img-responsive" src="img/inventar-etiketten3.jpg" alt="inventar-etiketten">
-										<div class="general-grid-caption">
-											<h3>Eigentum & Inventar</h3>					
-										</div>
-									</a>
-								</div>
-							</div>						
-							<div class="col-12 col-sm-6 col-md-6">
-								<div class="general-grid-item">
-									<a href="#"><img class="img-responsive" src="img/industrie-etiketten3.jpg" alt="industrie-etiketten">
-										<div class="general-grid-caption">
-											<h3>Maschinen & Industrie</h3>
-										</div>
-									</a>
-								</div>
-							</div>
+						<div class="big-grid">
+							<ul class="products">
+								<li class="product">
+									<div class="product-image"><img src="img/versand-etiketten3.jpg" alt="Versandetiketten" /></div>
+									<div class="general-grid-caption">
+										<a href="#"><h3>Versand und Lieferung</h3></a>		
+									</div>
+									<a class="btn btn-blue product-info-button" href="#">Zu den Produkten</a>
+								</li>
+								
+								<li class="product">
+									<div class="product-image"><img src="img/industrie-etiketten3.jpg" alt="nach Undergrund" /></div>
+									<div class="general-grid-caption">
+										<a href="#"><h3>Maschinen & Industrie</h3></a>
+									</div>
+									<a class="btn btn-blue product-info-button" href="#">Zu den Produkten</a>
+								</li>
+								
+								<li class="product">
+									<div class="product-image"><img src="img/inventar-etiketten3.jpg" alt="nach Undergrund" /></div>
+									<div class="general-grid-caption">
+										<a href="#"><h3>Eigentum & Inventar</h3></a>
+									</div>
+									<a class="btn btn-blue product-info-button" href="#">Zu den Produkten</a>
+								</li>
+								
+								<li class="product">
+									<div class="product-image"><img src="img/lager-etiketten3.jpg" alt="Lageretiketten" /></div>
+									<div class="general-grid-caption">
+										<a href="#"><h3>Lager & Logistik</h3></a>		
+									</div>
+									<a class="btn btn-blue product-info-button" href="#">Zu den Produkten</a>
+								</li>
+							</ul>
+							
 						</div>
+						
 						<h2>Entdecken Sie weitere Produkte</h2>
 						
-						<div class="row big-grid">
-							<div class="col-12 col-sm-6 col-md-6">
-								<div class="general-grid-item">
-									<a href="#"><img class="img-responsive" src="img/scanner3.jpg" alt="barcodescanner">
-										<div class="general-grid-caption">
-											<h3>Barcode Scanner</h3>
-										</div>
-									</a>
-								</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-6">
-								<div class="general-grid-item">
-									<a href="#"><img class="img-responsive" src="img/spender3.jpg" alt="etikettenspender">
-										<div class="general-grid-caption">
-											<h3>Etikettenspender</h3>				
-										</div>
-									</a>
-								</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-6">
-								<div class="general-grid-item">
-									<a href="#"><img class="img-responsive" src="img/zubehoer3.jpg" alt="zubehör & ersatzteile">
-										<div class="general-grid-caption">
-											<h3>Zubehör & ersatzteile</h3>					
-										</div>
-									</a>
-								</div>
-							</div>						
-							<div class="col-12 col-sm-6 col-md-6">
-								<div class="general-grid-item">
-									<a href="#"><img class="img-responsive" src="img/sonder-etiketten3.jpg" alt="sonderanfertigungen">
-										<div class="general-grid-caption">
-											<h3>Sonderanfertigungen</h3>
-										</div>
-									</a>
-								</div>
-							</div>
+						<div class="big-grid">
+							
+							<ul class="products">
+								<li class="product">
+									<div class="product-image"><img src="img/scanner3.jpg" alt="barcodescanner"></div>
+									<div class="general-grid-caption">
+										<a href="#"><h3>Barcode Scanner</h3></a>		
+									</div>
+									<a class="btn btn-blue product-info-button" href="#">Zu den Produkten</a>
+								</li>
+								
+								<li class="product">
+									<div class="product-image"><img src="img/spender3.jpg" alt="etikettenspender"></div>
+									<div class="general-grid-caption">
+										<a href="#"><h3>Etikettenspender</h3></a>
+									</div>
+									<a class="btn btn-blue product-info-button" href="#">Zu den Produkten</a>
+								</li>
+								
+								<li class="product">
+									<div class="product-image"><img src="img/zubehoer3.jpg" alt="zubehör & ersatzteile"></div>
+									<div class="general-grid-caption">
+										<a href="#"><h3>Zubehör & Ersatzteile</h3></a>
+									</div>
+									<a class="btn btn-blue product-info-button" href="#">Zu den Produkten</a>
+								</li>
+								
+								<li class="product">
+									<div class="product-image"><img src="img/sonder-etiketten3.jpg" alt="sonderanfertigungen"></div>
+									<div class="general-grid-caption">
+										<a href="#"><h3>Sonderanfertigungen</h3></a>		
+									</div>
+									<a class="btn btn-blue product-info-button" href="#">Zu den Produkten</a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -538,30 +683,25 @@
 				<h2>Dürfen wir Sie beraten?</h2>
 				<h3>Sie profitieren von über 14 Jahren Erfahrung unserer Experten</h3>
 				<div class="container">
-					<div class="row">
-						<div class="col-12 col-md-4">
-							<div class="service-box">
-								<div class="service-img"><span class="icon-support_2"></span></div>
-								<div class="service-title"><h4>Kostenloser Support</h4></div>
-								<div class="service-description">Unsere Kunden schätzen unseren Support. Auch für Ihr Anliegen werden wir eine schnelle und einfache Lösung finden. Egal wie sie uns kontaktieren</div>
-								<a href="#" class="btn btn-blue">Zur Serviceseite</a>
-							</div>
-						</div>
-						<div class="col-12 col-md-4">
-							<div class="service-box">
-								<div class="service-img"><span class="icon-experten_2"></span></div>
-								<div class="service-title"><h4>Inhouse Experten</h4></div>
-								<div class="service-description">Unsere Kunden schätzen unseren Support. Auch für Ihr Anliegen werden wir eine schnelle und einfache Lösung finden. Egal wie sie uns kontaktieren</div>
-								<a href="#" class="btn btn-blue">Zur Serviceseite</a>
-							</div>
-						</div>
-						<div class="col-12 col-md-4">
-							<div class="service-box">
-								<div class="service-img"><span class="icon-partner_2"></span></div>
-								<div class="service-title"><h4>Die perfekte partner für die Industrie</h4></div>
-								<div class="service-description">Unsere Kunden schätzen unseren Support. Auch für Ihr Anliegen werden wir eine schnelle und einfache Lösung finden. Egal wie sie uns kontaktieren</div>
-								<a href="#" class="btn btn-blue">Zur Serviceseite</a>
-							</div>
+					<div class="top-services">
+						
+						<div class="service-box">
+							<div class="service-img"><span class="icon-support_2"></span></div>
+							<div class="service-title"><h4>Kostenloser Support</h4></div>
+							<div class="service-description">Unsere Kunden schätzen unseren Support. Auch für Ihr Anliegen werden wir eine schnelle und einfache Lösung finden. Egal wie sie uns kontaktieren</div>
+							<a href="#" class="btn btn-blue">Zur Serviceseite</a>
+						</div>	
+						<div class="service-box">
+							<div class="service-img"><span class="icon-experten_2"></span></div>
+							<div class="service-title"><h4>Inhouse Experten</h4></div>
+							<div class="service-description">Unsere Kunden schätzen unseren Support. Auch für Ihr Anliegen werden wir eine schnelle und einfache Lösung finden. Egal wie sie uns kontaktieren</div>
+							<a href="#" class="btn btn-blue">Zur Serviceseite</a>
+						</div>	
+						<div class="service-box">
+							<div class="service-img"><span class="icon-partner_5"></span></div>
+							<div class="service-title"><h4>Die perfekte partner für die Industrie</h4></div>
+							<div class="service-description">Unsere Kunden schätzen unseren Support. Auch für Ihr Anliegen werden wir eine schnelle und einfache Lösung finden. Egal wie sie uns kontaktieren</div>
+							<a href="#" class="btn btn-blue">Zur Serviceseite</a>
 						</div>
 					</div>
 				</div>
@@ -585,62 +725,119 @@
 			</section>
 			<footer>
 			</footer>
+		</div>
+		<script src="js/scripts.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+		<script>
 			
-			<script src="js/scripts.min.js"></script>
-			<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-			<script>
+			$(document).ready(function(){
 				
-				$(document).ready(function(){
+				var selectedClass = ".option-2";
+				//selectedClass = '.' + $(".filters-item.active").attr("data-rel");
+				$(".products1 li").not(selectedClass).hide()
+				
+				$('.filters-item').click(function(){
+					console.log('clicked', this)
+					// reset active class
+					$('.filters-item').removeClass("active");
+					// add active class to selected
+					$(this).addClass("active");
+					// return needed to make function work
 					
 					var selectedClass = "";
-					selectedClass = '.' + $(".filters-item.active").attr("data-rel");
-					$(".products li").not(selectedClass).hide()
-					
-					$('.filters-item').click(function(){
-						console.log('clicked', this)
-						// reset active class
-						$('.filters-item').removeClass("active");
-						// add active class to selected
-						$(this).addClass("active");
-						// return needed to make function work
-						
-						var selectedClass = "";
-						selectedClass = $(this).attr("data-rel");
-						// fades out all products items
-						$(".products li").fadeOut(300);
-						// fades in selected category
-						$(".products li." + selectedClass).delay(300).fadeIn(300);
-						return false;
-					});
-					
-					
-				}); // document ready
+					selectedClass = $(this).attr("data-rel");
+					// fades out all products items
+					$(".products1 li").fadeOut(300);
+					// fades in selected category
+					$(".products1 li." + selectedClass).delay(300).fadeIn(300);
+					return false;
+				});
 				
-				$(document).ready(function(){
+				
+			}); // document ready
+			
+			$(document).ready(function(){
+				
+				var selectedClass2 = "";
+				selectedClass2 = '.' + $(".filters-item2.active").attr("data-rel");
+				$(".products2 li").not(selectedClass2).hide()
+				
+				$('.filters-item2').click(function(){
+					console.log('clicked', this)
+					// reset active class
+					$('.filters-item2').removeClass("active");
+					// add active class to selected
+					$(this).addClass("active");
+					// return needed to make function work
 					
 					var selectedClass2 = "";
-					selectedClass2 = '.' + $(".filters-item2.active").attr("data-rel");
-					$(".products2 li").not(selectedClass2).hide()
+					selectedClass2 = $(this).attr("data-rel");
+					// fades out all products items
+					$(".products2 li").fadeOut(300);
+					// fades in selected category
+					$(".products2 li." + selectedClass2).delay(300).fadeIn(300);
+					return false;
+				});					
+				
+				setTimeout(function(){
+					$('.filters-item3.active').trigger('click');
+				}, 0);
+				$('.filters-item3').click(function(){
+					console.log('clicked', this)
+					// reset active class
+					$('.filters-item3').removeClass("active");
+					// add active class to selected
+					$(this).addClass("active");
+					// return needed to make function work
 					
-					$('.filters-item2').click(function(){
-						console.log('clicked', this)
-						// reset active class
-						$('.filters-item2').removeClass("active");
-						// add active class to selected
-						$(this).addClass("active");
-						// return needed to make function work
-						
-						var selectedClass2 = "";
-						selectedClass2 = $(this).attr("data-rel");
-						// fades out all products items
-						$(".products2 li").fadeOut(300);
-						// fades in selected category
-						$(".products2 li." + selectedClass2).delay(300).fadeIn(300);
-						return false;
-					});
+					var selectedClass3 = "";
+					selectedClass3 = $(this).attr("data-rel");
+					// fades out all products items
+					$(".products3 li").fadeOut(300);
+					// fades in selected categoryse
+					$(".products3 li." + selectedClass3).delay(300).fadeIn(300);
+					return false;
+				});
+				
+				
+			}); // document ready
+		</script>
+		<script>
+			$(function() {
+				// Owl Carousel
+				var owl = $(".owl-carousel");
+				owl.owlCarousel({
+					items: 3,
+					margin: 10,
+					loop: true,
+					nav: true,
+					dots: false,
+					autoplay: true,
+					responsiveClass:true,
+					responsive:{
+						0:{
+							items:1,
+							nav: false,
+						},
+						767:{
+							items:2,
+						},
+						1024:{
+							items:3,
+						}
+					},
+					navText: [
+					"<span class='icon-slider-back'></span>",
+					"<span class='icon-slider-forwards'></span>"
+					],
+					beforeInit : function(elem){
+						//Parameter elem pointing to $("#owl-demo")
+						random(elem);
+					}
 					
-				}); // document ready
-			</script>
-		</div>
-		</body>
-	</html>
+				});
+			});	
+			
+		</script>
+	</body>
+</html>
