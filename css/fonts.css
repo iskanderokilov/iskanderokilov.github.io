@@ -1,3 +1,52 @@
+/* latin */
+@font-face {
+	font-family: 'Barlow';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Barlow Italic'), local('Barlow-Italic'), url(https://fonts.gstatic.com/s/barlow/v3/7cHrv4kjgoGqM7E_Cfs7wH8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow-Medium';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Barlow Medium Italic'), local('Barlow-MediumItalic'), url(https://fonts.gstatic.com/s/barlow/v3/7cHsv4kjgoGqM7E_CfPI42ouvTo.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow-Bold';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Barlow Bold Italic'), local('Barlow-BoldItalic'), url(https://fonts.gstatic.com/s/barlow/v3/7cHsv4kjgoGqM7E_CfOA5WouvTo.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Barlow Regular'), local('Barlow-Regular'), url(https://fonts.gstatic.com/s/barlow/v3/7cHpv4kjgoGqM7E_DMs5.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow-Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Barlow Medium'), local('Barlow-Medium'), url(https://fonts.gstatic.com/s/barlow/v3/7cHqv4kjgoGqM7E3_-gs51os.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Barlow Bold'), local('Barlow-Bold'), url(https://fonts.gstatic.com/s/barlow/v3/7cHqv4kjgoGqM7E3t-4s51os.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 @font-face {
   font-family: 'icomoon';
   src:  url('../fonts/icomoon/icomoon.eot?7tfn8u');
@@ -8,7 +57,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -25,6 +73,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-partner_6:before {
+  content: "\e91f";
+}
+.icon-support_3:before {
+  content: "\e91c";
+}
+.icon-partner_5:before {
+  content: "\e91e";
+}
+.icon-partner_4:before {
+  content: "\e917";
+}
+.icon-partner_3:before {
+  content: "\e91b";
+}
 .icon-partner_2:before {
   content: "\e912";
 }
@@ -82,16 +145,16 @@
 .icon-close:before {
   content: "\e90a";
 }
-.icon-contact1:before {
+.icon-contact_1:before {
   content: "\e90b";
 }
-.icon-contact2:before {
+.icon-contact_2:before {
   content: "\e90c";
 }
-.icon-contact3:before {
+.icon-contact_3:before {
   content: "\e90d";
 }
-.icon-expert:before {
+.icon-experten:before {
   content: "\e90e";
 }
 .icon-search:before {
@@ -103,6 +166,6 @@
 .icon-slider-back:before {
   content: "\e91a";
 }
-.icon-wishlisht:before {
+.icon-wishlist:before {
   content: "\e91d";
 }
