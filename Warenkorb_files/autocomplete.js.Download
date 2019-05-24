@@ -1,0 +1,505 @@
+define([
+    'quickSearch',
+    'jquery',
+    'underscore',
+    'mage/template',
+    'mage/translate',
+    'jquery/ui'
+], function (quickSearch, $, _, mageTemplate, $translate) {
+    'use strict';
+
+    var autoComplete = {
+        ajaxRequest: null,
+        url: null,
+        timer: null,
+        delay: 500,
+        currentUrlEncoded: null,
+        minSizePopup: 700,
+        sizePopupBreakpoint: 550,
+        mobileView: 768,
+        windowWidth: $(window).width(),
+        defaultSearchBlock: $('.block-search').find($('.minisearch')).width(),
+        searchContainerSelector: '[data-amsearch-js="form-container"]',
+        proportionSide: 0.33,
+
+        init: function (url, layout, currentUrlEncoded) {
+            this.url = url;
+            this.layout = layout;
+            this.currentUrlEncoded = currentUrlEncoded;
+            this.extend();
+        },
+
+        extend: function () {
+            var _caller = this;
+            var methods = {
+                options: {
+                    amAutoComplete: _caller,
+                    responseFieldElements: '.amsearch-item',
+                    minChars: this.layout.minChars
+                },
+
+                _onPropertyChange: function () {
+                    if (_caller.timer != null) {
+                        clearTimeout(_caller.timer);
+                    }
+                    _caller.timer = setTimeout(function () {
+                        _caller._onPropertyChange.call(this);
+                    }.bind(this), _caller.delay);
+                },
+
+                _create: this._create,
+                _onSubmit: this._onSubmit,
+                _createLoader: this.createLoader,
+                _createCloseIcon: this.createCloseIcon,
+                _createLoupeIcon: this.createLoupeIcon,
+                _createSearchWrapper: this.createSearchWrapper,
+                _createOverlay: this.createOverlay,
+                _amastyXsearchOnClick: this.onClick,
+                _amastyXsearchShowLoader: this.showLoader,
+                _amastyXsearchHideLoader: this.hideLoader,
+                _amastyXsearchShowPopup: this.showPopup,
+                _amastyXsearchChangePopupFlow: this.changePopupFlow,
+                _amastyXsearchHidePopup: this.hidePopup,
+                _amastyXsearchClearField: this.clearField,
+                _amastyXsearchDifineHideOrClear: this.difineHideOrClear,
+                _amastyXsearchOutputNotFound: this.outputNotFound,
+                _amastyXsearchGetEmptyRequest: this.getEmptyRequest,
+                _amastyXsearchDefineExistencePopup: this.defineExistencePopup
+            };
+
+            $.extend(true, quickSearch.prototype, methods);
+        },
+
+        _create: function () {
+            this.responseList = {
+                indexList: null,
+                selected: null
+            };
+            this.autoComplete = $(this.options.destinationSelector);
+            this.searchForm = $(this.options.formSelector);
+            this.submitBtn = this.searchForm.find(this.options.submitBtn)[0];
+            this.searchLabel = $(this.options.searchLabel);
+            this.redirectUrl = null;
+
+            this._createLoader();
+            this._createCloseIcon();
+            this._createLoupeIcon();
+            this._createSearchWrapper();
+            this._createOverlay();
+            this._amastyXsearchDifineHideOrClear();
+
+            _.bindAll(this, '_onKeyDown', '_onPropertyChange', '_onSubmit', '_amastyXsearchOnClick');
+
+            this.submitBtn.disabled = true;
+
+            this.element.attr('autocomplete', this.options.autocomplete);
+
+            var timer;
+
+            this.element.on('blur', $.proxy(function () {
+                timer = setTimeout($.proxy(function () {
+                    this._updateAriaHasPopup(false);
+                }, this), 250);
+            }, this));
+
+            this.element.trigger('blur');
+
+            this.element.on('focus', $.proxy(function () {
+                if (timer != null) {
+                    clearTimeout(timer);
+                }
+
+                this.searchLabel.addClass('active');
+            }, this));
+            this.element.on('keydown', this._onKeyDown);
+
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE ");
+
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+                $(this.element).keyup(this._onPropertyChange);
+            } else {
+                this.element.on('input propertychange', this._onPropertyChange);
+            }
+
+            this.element.on('input click', this._amastyXsearchOnClick);
+
+            this.searchForm.on('submit', $.proxy(function (e) {
+                this._onSubmit(e);
+                this._updateAriaHasPopup(false);
+            }, this));
+
+            var $preload = $('[data-amsearch-js="preload"]');
+            if ($preload && $preload.html) {
+                var amAutoComplete = this.options.amAutoComplete;
+                $.get(
+                    amAutoComplete.url.slice(0, -1) + 'recent',
+                    {uenc: amAutoComplete.currentUrlEncoded},
+                    $.proxy(function (data) {
+                        if (data && data.html) {
+                            $preload.html(data.html);
+                        }
+                    }, this)
+                );
+            }
+        },
+
+        onClick: function () {
+            if (this.autoComplete && this.autoComplete.is(":visible")) {
+                return;//fix for IE
+            }
+
+            var preload = $('[data-amsearch-js="preload"]');
+            if (preload && preload.length > 0) {
+                this._amastyXsearchShowPopup(preload.html());
+            } else {
+                this._amastyXsearchGetEmptyRequest();
+            }
+
+            var value = this.element.val().trim();
+
+            var minChars = this.options.minChars ? this.options.minChars : this.options.minSearchLength;
+            if (value.length >= parseInt(minChars, 10)
+                && this.options.amAutoComplete.ajaxRequest
+                && this.options.amAutoComplete.ajaxRequest.readyState !== 1
+            ) {
+                this._onPropertyChange();
+            }
+        },
+
+        _onSubmit: function (e) {
+            var value = this.element.val().trim();
+
+            if (value.length === 0 || value == null || /^\s+$/.test(value)) {
+                e.preventDefault();
+            }
+
+            if (this.redirectUrl) {
+                e.preventDefault();
+                window.location.assign(this.redirectUrl);
+            }
+
+            //disable search by selected items
+        },
+
+        showPopup: function (data) {
+            var self = this,
+                amAutoComplete = this.options.amAutoComplete,
+                searchField = this.element,
+                source = this.options.template,
+                template = mageTemplate(source),
+                dropdown = $('<div class="amsearch-results" data-amsearch-js="results"></div>'),
+                searchResults = $('<div class="amsearch-leftside"></div>'),
+                sideProportion = this.options.amAutoComplete.proportionSide,
+                value = this.element.val().trim(),
+                productResults = '.amsearch-products',
+                leftSide = '.amsearch-leftside',
+                leftSideWidth,
+                productsWidth,
+                searchContainer = this.options.amAutoComplete.searchContainerSelector;
+
+            dropdown.append(searchResults);
+
+            if ($.type(data) == 'string') {
+                searchResults.append(data);
+                this.searchForm.addClass('amsearch-form-container').attr('data-amsearch-js', 'form-container');
+            } else {
+                for (var i in data) {
+                    if (data[i].type == 'product' &&
+                        amAutoComplete.layout.width >= this.options.amAutoComplete.sizePopupBreakpoint &&
+                        this.options.amAutoComplete.windowWidth >= this.options.amAutoComplete.mobileView
+                    ) {
+                        dropdown.append(data[i].html);
+                    } else {
+                        searchResults.append($(data[i].html).addClass(data[i].type));
+                    }
+                }
+            }
+
+            this._amastyXsearchChangePopupFlow();
+
+            this.responseList.indexList = this.autoComplete.html(dropdown)
+                .addClass('amsearch-clone-position')
+                .show()
+                .find(this.options.responseFieldElements + ':visible');
+
+            $('[data-search-block-type="popular_searches"]').parent('.amsearch-item-container').addClass('popular_searches');
+            $('[data-search-block-type="recent_searches"]').parent('.amsearch-item-container').addClass('recent_searches');
+
+            if (amAutoComplete.layout.width >= this.options.amAutoComplete.sizePopupBreakpoint) {
+                leftSideWidth = $(productResults).length ? amAutoComplete.layout.width * sideProportion : searchField.outerWidth();
+                productsWidth = amAutoComplete.layout.width ? amAutoComplete.layout.width * (1 - sideProportion) : searchField.outerWidth();
+                $(productResults).addClass('-columns');
+            } else {
+                leftSideWidth = $(productResults).length ? amAutoComplete.layout.width : searchField.outerWidth();
+            }
+
+            $('[data-amsearch-js="close"], [data-amsearch-js="loupe"]').appendTo($('[data-amsearch-js="search-wrapper-input"]')).show();
+            $('[data-amsearch-js="overlay"]').show();
+
+            $(searchContainer).addClass('-opened').find('.input-text').attr('placeholder', $translate('Enter Keyword or Item'));
+
+            $(searchContainer).keydown(function(eventObject){
+                if (eventObject.which == 27) {
+                    self._amastyXsearchHidePopup();
+                }
+            });
+
+            $(leftSide).css('width', leftSideWidth);
+            $(productResults).css('width', productsWidth);
+
+            if (!$(leftSide).children().length) {
+                $(leftSide).hide();
+            }
+
+            if(!$(leftSide).children('.amsearch-item-container').length) {
+                $(productResults).css('width', '100%');
+            }
+
+            this._resetResponseList(false);
+            this.element.removeAttr('aria-activedescendant');
+
+            if (this.responseList.indexList.length) {
+                this._updateAriaHasPopup(true);
+            } else {
+                this._updateAriaHasPopup(false);
+            }
+
+            this.responseList.indexList
+                .on('click', function (e) {
+                    var $target = $(e.target);
+                    if ($target.hasClass('amasty-xsearch-block-header')) {
+                        return false;
+                    }
+
+                    if (!$target.attr('data-click-url')) {
+                        $target = $(e.target).closest('[data-click-url]');
+                    }
+                    if ($(e.target).closest('[data-amsearch-js="item-actions"]').length === 0 && $(e.target).closest('[data-amsearch-js="product-item"]').length) {
+                        document.location.href = $target.attr('data-click-url');
+                    } else {
+                        this.element.focus();
+                        this.element.trigger('focus');
+                        this.element.blur();
+                    }
+                }.bind(this))
+                .on('mouseenter mouseleave', function (e) {
+                    if (this.responseList && this.responseList.indexList) {
+                        this.responseList.indexList.removeClass(this.options.selectClass);
+                    }
+
+                    $(e.target).addClass(this.options.selectClass);
+                    this.responseList.selected = $(e.target);
+                    this.element.attr('aria-activedescendant', $(e.target).attr('id'));
+                }.bind(this));
+        },
+
+        changePopupFlow: function () {
+            var searchContainer = this.options.amAutoComplete.searchContainerSelector;
+
+            if (this.options.amAutoComplete.layout.width < this.options.amAutoComplete.sizePopupBreakpoint) {
+                $(searchContainer).addClass('-small');
+            } else if (this.options.amAutoComplete.layout.width >= this.options.amAutoComplete.minSizePopup) {
+                $(searchContainer).addClass('-large');
+            }
+        },
+
+        hidePopup: function () {
+            var searchContainer = this.options.amAutoComplete.searchContainerSelector;
+
+            if (this.autoComplete.is(':hidden')) {
+                this.searchLabel.removeClass('active');
+            }
+
+            this.autoComplete.hide();
+            $('[data-amsearch-js="overlay"], [data-amsearch-js="close"], [data-amsearch-js="loupe"]').hide();
+            $(searchContainer).find('.input-text').attr('placeholder', $translate('Search entire store here...'));
+            $(searchContainer).removeClass('-opened');
+
+            if (this.options.amAutoComplete.windowWidth >= this.options.amAutoComplete.mobileView) {
+                $(searchContainer).find('.amsearch-wrapper-input').css('width', this.options.amAutoComplete.defaultSearchBlock);
+                $('.search-autocomplete').css('width', this.options.amAutoComplete.defaultSearchBlock);
+            }
+        },
+
+        clearField: function () {
+            var searchContainer = this.options.amAutoComplete.searchContainerSelector,
+                searchField = this.element,
+                preload = $('[data-amsearch-js="preload"]');
+
+            searchField.val('').focus();
+
+            this._amastyXsearchShowPopup(preload.html());
+
+            if (this.options.amAutoComplete.windowWidth >= this.options.amAutoComplete.mobileView) {
+                $(searchContainer).find('.amsearch-wrapper-input').css('width', this.options.amAutoComplete.defaultSearchBlock);
+                $('.search-autocomplete').css('width', this.options.amAutoComplete.defaultSearchBlock);
+                $('.amsearch-leftside').css('width', this.options.amAutoComplete.defaultSearchBlock);
+            }
+
+            this._amastyXsearchDefineExistencePopup();
+        },
+
+        difineHideOrClear: function () {
+            var self = this;
+
+            $('body').on('click', function (e) {
+                var target = $(e.target);
+
+                if (target.hasClass('amsearch-close')) {
+                    self._amastyXsearchClearField();
+                }
+
+                if (!target.closest('.amsearch-form-container').length) {
+                    self._amastyXsearchHidePopup();
+                }
+            });
+        },
+
+        outputNotFound: function () {
+            var amAutoComplete = this.options.amAutoComplete,
+                result = $('[data-amsearch-js="products"]').length,
+                dropdown = $('[data-amsearch-js="results"]'),
+                message = $translate('Your search returned no products.');
+
+            if (!result) {
+                $('<div class="amsearch-products -waste">' + message + '</div>').appendTo(dropdown);
+
+                if (amAutoComplete.layout.width >= this.options.amAutoComplete.sizePopupBreakpoint) {
+                    $('.amsearch-leftside').css('width', amAutoComplete.layout.width * this.options.amAutoComplete.proportionSide);
+                } else {
+                    $('.amsearch-leftside').css('width', amAutoComplete.layout.width);
+                }
+            }
+        },
+
+        getEmptyRequest: function () {
+            var searchContainer = this.options.amAutoComplete.searchContainerSelector;
+
+            $('[data-amsearch-js="close"], [data-amsearch-js="loupe"]').appendTo($('[data-amsearch-js="search-wrapper-input"]')).show();
+            $('[data-amsearch-js="overlay"]').show();
+
+            this.searchForm.addClass('amsearch-form-container').attr('data-amsearch-js', 'form-container');
+
+            $(searchContainer).addClass('-opened').find('.input-text').attr('placeholder', $translate('Enter Keyword or Item'));
+
+            this._amastyXsearchDefineExistencePopup();
+        },
+
+        defineExistencePopup: function () {
+            if (!$('[data-amsearch-js="results"]').find('.amsearch-leftside').children().length) {
+                $('.search-autocomplete').hide();
+                $('[data-amsearch-js="overlay"]').hide();
+            }
+        },
+
+        _onPropertyChange: function () {
+            var amAutoComplete = this.options.amAutoComplete;
+            var searchField = this.element,
+                clonePosition = {
+                    position: 'absolute',
+                    // Removed to fix display issues
+                    // left: searchField.offset().left,
+                    // top: searchField.offset().top + searchField.outerHeight(),
+                    width: amAutoComplete.layout.width ?
+                            amAutoComplete.layout.width:
+                            searchField.outerWidth()
+                },
+                source = this.options.template,
+                template = mageTemplate(source),
+                value = this.element.val().trim();
+
+            // check if value is empty
+            this.submitBtn.disabled = (value.length === 0) || (value == null) || /^\s+$/.test(value);
+
+            var minChars = this.options.minChars ? this.options.minChars : this.options.minSearchLength;
+
+            if (value.length >= parseInt(minChars, 10)) {
+                this._amastyXsearchShowLoader();
+
+                if (amAutoComplete.ajaxRequest) {
+                    amAutoComplete.ajaxRequest.abort();
+                }
+
+                amAutoComplete.ajaxRequest = $.get(
+                    amAutoComplete.url,
+                    {q: value, uenc: amAutoComplete.currentUrlEncoded},
+                    $.proxy(function (data) {
+                        this._amastyXsearchShowPopup(data);
+                        this._amastyXsearchHideLoader();
+                        if (this.options.amAutoComplete.windowWidth > this.options.amAutoComplete.mobileView) {
+                            $('.amsearch-form-container').find('.amsearch-wrapper-input, .search-autocomplete').css('width', amAutoComplete.layout.width);
+                        }
+
+                        this._amastyXsearchOutputNotFound();
+
+                        if (data.redirect_url) {
+                            this.redirectUrl = data.redirect_url;
+                        } else {
+                            this.redirectUrl = null;
+                        }
+                    }, this)
+                );
+            } else {
+                this._resetResponseList(true);
+                this.autoComplete.hide();
+                this._updateAriaHasPopup(false);
+                this.element.removeAttr('aria-activedescendant');
+            }
+        },
+
+        createLoader: function () {
+            var loader = $('<div/>', {
+                id: 'amasty-xsearch-loader',
+                class: 'amasty-xsearch-loader amasty-xsearch-hide'
+            }).appendTo(this.searchForm);
+        },
+
+        createSearchWrapper: function () {
+            var wrapper = $('<div/>', {
+                class: 'amsearch-wrapper-input',
+                'data-amsearch-js': 'search-wrapper-input'
+            }).appendTo($(this.searchForm.find('.control')));
+            $(this.searchForm.find('.input-text')).appendTo('[data-amsearch-js="search-wrapper-input"]');
+        },
+
+        createCloseIcon: function () {
+            var closeIcon = $('<div/>', {
+                class: 'amsearch-close',
+                title: $translate('Clear Field'),
+                'data-amsearch-js': 'close'
+            }).appendTo(this.searchForm.find('.control'));
+        },
+
+        createLoupeIcon: function () {
+            var loupeIcon = $('<button/>', {
+                class: 'amsearch-loupe',
+                title: $translate('Search'),
+                type: 'submit',
+                'data-amsearch-js': 'loupe'
+            }).appendTo(this.searchForm.find('.control'));
+        },
+
+        createOverlay: function () {
+            var overlay = $('<div/>', {
+                class: 'amsearch-overlay',
+                'data-amsearch-js': 'overlay'
+            }).appendTo($('body'));
+        },
+
+        showLoader: function () {
+            var $loader = $('#amasty-xsearch-loader');
+            $loader.removeClass('amasty-xsearch-hide');
+
+            $(this.submitBtn).addClass('amasty-xsearch-hide');
+        },
+
+        hideLoader: function () {
+            var $loader = $('#amasty-xsearch-loader');
+            $loader.addClass('amasty-xsearch-hide');
+            $(this.submitBtn).removeClass('amasty-xsearch-hide');
+        }
+    };
+
+    return autoComplete;
+});
