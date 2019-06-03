@@ -289,8 +289,10 @@ nav {
 }
 .hero-caption-box {
 	display:flex;
-	padding-inline-start: 5%;
-	padding-inline-end: 5%;
+	padding-inline-start: 0;
+	padding-inline-end: 0;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 .hero-buttons {
 	padding-bottom: 30px;
@@ -316,12 +318,14 @@ nav {
 	flex-wrap:nowrap;
 	list-style:none;
 	justify-content:space-between;
-	padding-inline-start: 20px;
-	padding-inline-end: 20px;
+	padding-inline-start: 0;
+	padding-inline-end: 0;
 	color: @white;
 	text-align: center;
 	padding-top: 50px;
 	padding-bottom: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
 	& span {
 		color: @white;
 	}
@@ -382,6 +386,35 @@ a.btn-white {
 		}
 		& .product-details-area {
 			text-align: left;
+		& .btn-blue {
+			color: @white;
+			float: left;
+			margin-top: 10px;
+			@media(max-width:767px)
+			{
+			float: unset;
+			}
+			}
+			& .product-shortname {
+				font-family: barlow-bold;
+				font-size: 20px;
+				color: @color-main-one;
+				margin-bottom: 7px;
+			}
+			& .product-item-name {
+			& a {
+				font-family: barlow;
+				font-size: 13px;
+				line-height: 19px;
+				font-weight: 400;
+				color: #333;
+				}	
+			}
+			& .product-price {
+				font-family: barlow-bold;
+				font-size: 20px;
+				color: @color-main-one;
+				}
 		}
 	}
 	& .general-sonder h3 {
@@ -404,6 +437,7 @@ a.btn-white {
 		font-size: 1.3em;
 	}
 }
+
 .general-grid-caption {
 	position: absolute;
 	top: 0;
@@ -439,6 +473,7 @@ a.btn-blue {
 	letter-spacing: 0.1em;
 	margin: 0 auto;
 	display: block;
+	width: 250px;
 	width: fit-content;
 	text-align: center;
 	border: 1px solid @color-main-one;
@@ -459,7 +494,7 @@ a.product-info-button {
 	margin-top: -90px;
 	left: 0;
 	right: 0;
-	max-width: fit-content;
+	max-width: 300px;
 }
 
 .product:hover .general-grid-caption {
@@ -562,7 +597,7 @@ a.filters-item {
 
 
 .general-product-carousel {
-	margin-bottom: 460px;
+	margin-bottom: 520px;
 	& h2 {
 		margin-bottom: 15px;
 	}
@@ -573,7 +608,7 @@ a.filters-item {
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: -120px;
-		margin-top: -20px;
+		margin-top: 0;
 		& .owl-nav{
 			display:none;
 		}
@@ -757,7 +792,7 @@ a.filters-item {
 & .owl-next {
 	position: absolute;
 	right: -45px;
-	margin-top: -260px;
+	margin-top: -320px;
 	&:focus{
 	outline: none;
 }
@@ -765,7 +800,7 @@ a.filters-item {
 & .owl-prev {
 	position: absolute;
 	left: -45px;
-	margin-top: -260px;
+	margin-top: -320px;
 	&:focus{
 	outline: none;
 }
@@ -796,24 +831,29 @@ a.filters-item {
 	}
 }
 }
-.general-sonder {
+.sonder {
 	position: relative;
-	margin-top: 40px;
-	margin-bottom: 95px;
-	color: white;
-	background: url("../img/rolle2.jpg");
-	background-position: 80% 0;
-	background-repeat: no-repeat;
-	mix-blend-mode: darken;
-	padding-bottom: 45px;
-	&:before {
-	content: "";
-	background: @color-main-one none repeat scroll 0 0;
-	position: absolute;
-	z-index: -1;
 	width: 100%;
 	height: 100%;
-	opacity: 0.65;
+	min-height: 300px;
+& .general-sonder-img {
+	padding-right: 30px;
+& img {
+	float: right;
+}
+}
+& .general-sonder {
+	position: absolute;
+    color: #fff;
+    background: #062655;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    background-size: 100%;
+    opacity: .7;
+    width: 100%;
+	height: 100%;
 }
 & ul {
 	padding-left: 55px;
@@ -826,7 +866,6 @@ a.filters-item {
 	margin-bottom: 30px;
 }
 }
-
 .small-carousel {
 	justify-content: center;
 	& .content {
@@ -835,13 +874,24 @@ a.filters-item {
 	& img {
 		width: 100%;
 		margin: 20px auto auto auto;
-		mix-blend-mode: exclusion;
 	}
 	& .tabs {
-	& > :first-child {
-	& img {
-	 mix-blend-mode: normal;
+	& > :nth-child(2) {
+	& .content {
+	& .owl-stage-outer {
+	& .owl-stage {
+	margin-left: 25%;
+	@media(max-width: 1023px){
+	margin-left: 16.66667%;
 	}
+	@media(max-width: 767px){
+	margin-left: 0;
+	}
+	}
+	}
+	}
+	}
+	& > :first-child, > :last-child {
 	& .content {
 	max-width: 100%;
 	}
@@ -926,7 +976,7 @@ span.heading.filters-item {
 	font-family: barlow-bold;
 	margin-top: 15px;
 	&:after {
-	content: "exkl. MwSt";
+	content: "inkl. MwSt";
 	font-size: 0.7em;
 	font-weight: 500;
 	font-family: barlow-medium;
@@ -952,6 +1002,10 @@ span.heading.filters-item {
 	padding-top: 40px;
 	padding-bottom: 60px;
 	margin-bottom: 80px;
+	& .service-title {
+		marigin-left: auto;
+		margin-right: auto;
+		}
 	& h2, h3, h4, h5, h6 {
 		text-align: center;
 		color: @color-main-one;
@@ -965,6 +1019,12 @@ span.heading.filters-item {
 	& h3 {
 		font-weight: 400;
 	}
+	& h4 {
+		margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    min-width: 100%;
+		}
 	& img {
 		margin-left: auto;
 		margin-right: auto;
@@ -984,7 +1044,13 @@ span.heading.filters-item {
 		text-align:center;
 		padding-top: 10px;
 		padding-bottom: 10px;
+		margin-left: auto;
+		margin-right: auto;
 	}
+	& .service-title {
+		margin-left: auto;
+		margin-right: auto;
+		}
 	& [class^="icon-"] {
 		font-size: 50px;
 		color: @color-main-one;
@@ -1004,21 +1070,27 @@ span.heading.filters-item {
 	margin-right: -15px;
 	& .service-box {
 		flex: 0 0 calc((100% / 3) - 15px);
+		max-width: 33%; /* for ie 11 */
+		max-width: calc((100% / 3) - 15px);
 		padding-left: 15px;
 		padding-right: 15px;
 		padding-bottom: 15px;
 		@media(max-width: 478px) {
 		flex: 0 0 100%;
+		max-width: 100%;
 	}
 }
 & :nth-child(1), :nth-child(2) {
 	@media(min-width: 479px) and (max-width: 1024px) {
 	flex: 0 0 calc((100% /2 ) - 15px);
+	max-width: 49.999%;
+    max-width: calc((100% /2 ) - 15px);
 }
 }
 & :nth-child(3) {
 	@media(max-width: 1024px) {
 	flex: 0 0 100%;
+	max-width: 100%;
 }
 }
 }
