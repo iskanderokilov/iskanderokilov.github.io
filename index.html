@@ -1000,6 +1000,32 @@
 					</div>
 				</section>
 			</div>
+			
+			<!-- sticky side contact popup -->
+			
+<div id="sticky-side">
+  <div class="contact-btn"><i class="icon-info"></i></div>
+  <div id="side-box">
+    <div class="side-header">
+      Brauchen Sie Hilfe oder haben Fragen?<br><!--span Wir helfen Ihnen gerne!--><i class="icon-close" aria-hidden="true"></i></div>
+    <div class="tax-switcher">
+      <div class="choose">Sind Sie Firmenkunde oder Privatkunde?</div>
+      <select class="tax_display_select" name="tax_display">
+        <option value="empty"></option>
+        <option value="2">Privatkunde (inkl. MwSt.)</option>
+        <option value="1">Geschäftskunde (exkl. MwSt)</option>
+      </select>
+    </div>
+    <div class="contact-boxes">
+      <div class="phone"><a href="tel:+4997217939811"><i class="icon-contact"></i><span>Rufen Sie uns an   +4997217939811</span></a></div>
+      <div class="mail"><a href="#"><i class="icon-contact_3"></i><span>Email schreiben</span></a></div>
+      <div class="newslt"><a href="#"><i class="icon-checkmark"></i><span>Newsletter abonieren</span></a></div>
+      <div class="chat"><a href="#"><i class="icon-contact_2"></i><span>Chat starten</span></a></div>
+    </div>
+  </div>
+</div>
+
+			<!--end sticky side contact popup -->
 			<footer>
 			</footer>
 		</div>
@@ -1085,6 +1111,30 @@
 				elements_selector: ".lazy"
 				// ... more custom settings?
 			});
+		</script>
+		<script>
+		/* home contact slider */
+jQuery(document).ready(function () {
+jQuery('.contact-btn').click(function(){
+		jQuery('#side-box').toggleClass('open-box');		
+	});
+	jQuery('.icon-close').click(function(){
+		jQuery('#side-box').removeClass('open-box');		
+	});
+	
+	jQuery('.contact-side').click(function(){
+		jQuery('#conact-content').toggleClass('open-box');		
+	});
+	
+	
+	
+	jQuery(document).click(function(e) {
+        if (jQuery(e.target).closest('#side-box').length === 0 && jQuery(e.target).closest('.contact-btn').length === 0) {
+            jQuery("#side-box").removeClass("open-box");
+        }
+
+    });
+});
 		</script>
 	</body>
 </html>
