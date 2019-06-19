@@ -569,7 +569,8 @@ a.filters-item {
 }
 .product {
 	position: relative;
-	flex: 1 0 calc(100% - 20px);
+	flex: 1 0;
+	flex-basis: calc(100% - 20px);
 	margin-top: 10px;
 	margin-bottom: 20px;
 	&:hover ~ .general-grid-caption {
@@ -579,13 +580,15 @@ a.filters-item {
 
 @media (min-width: 520px) {
 	.product {
-		flex: 0 0 calc((100% / 2) - 20px);
+		flex: 0 0;
+		flex-basis: calc((100% / 2) - 20px);
 	}
 	
 }
 @media (min-width: 860px) {
 	.product {
-		flex: 0 0 calc((100% / 3) - 20px);
+		flex: 0 0;
+		flex-basis: calc((100% / 3) - 20px);
 	}
 }
 
@@ -990,7 +993,8 @@ span.heading.filters-item {
 		font-size: 1.5em;
 	}
 	& .product {
-		flex: 0 0 calc((100% / 2) - 15px);
+		flex: 0 0;
+		flex-basis: calc((100% / 2) - 15px);
 		@media(max-width: 479px) {
 		flex: 0 0 100%;
 	}
@@ -1069,7 +1073,8 @@ span.heading.filters-item {
 	margin-left: -15px;
 	margin-right: -15px;
 	& .service-box {
-		flex: 0 0 calc((100% / 3) - 15px);
+		flex: 0 0;
+		flex-basis: calc((100% / 3) - 15px);
 		max-width: 33%; /* for ie 11 */
 		max-width: calc((100% / 3) - 15px);
 		padding-left: 15px;
@@ -1082,7 +1087,8 @@ span.heading.filters-item {
 }
 & :nth-child(1), :nth-child(2) {
 	@media(min-width: 479px) and (max-width: 1024px) {
-	flex: 0 0 calc((100% /2 ) - 15px);
+	flex: 0 0;
+	flex-basis: calc((100% /2 ) - 15px);
 	max-width: 49.999%;
     max-width: calc((100% /2 ) - 15px);
 }
