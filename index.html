@@ -36,7 +36,7 @@
 			
 			<!--Start header -->
 			
-			<header>
+			<header class="header" id="fix-on-scroll-header">
 				<div class="header-top">
 					
 					<div class="panel service">
@@ -55,7 +55,8 @@
 							<span>Toggle Nav</span>
 						</span>
 						<a class="logo" href="#" title="Thermotransferdrucker.net - Onlineshop">
-							<img src="img/logo_tt_white.png" title="Thermotransferdrucker.net - Onlineshop" alt="Thermotransferdrucker.net - Onlineshop">
+							<img class="logo-img" src="img/logo_tt_white.png" title="Thermotransferdrucker.net - Onlineshop" alt="Thermotransferdrucker.net - Onlineshop">
+              <img class="logo-img-mobile" src="img/logo_tt_text_only_white.svg" title="Thermotransferdrucker.net - Onlineshop" alt="Thermotransferdrucker.net - Onlineshop">
 						</a>	
 						<div class="block block-search">
 							<div class="block block-title"><strong>Suche</strong></div>
@@ -107,7 +108,7 @@
 			
 			<!-- Start navigation -->
 			
-			<nav>
+			<nav class="topnav" id="navigation">
 				<div class="container">
 					<ul class="nav">
 						<li class="nav-item"><a href="#">Drucker</a></li>
@@ -1136,5 +1137,23 @@ jQuery('.contact-btn').click(function(){
     });
 });
 		</script>
+    <script>
+window.onscroll = function() {fixTopElements()};
+var header = document.getElementById("fix-on-scroll-header");
+var stickyHeader = header.offsetTop;
+var nav = document.getElementById("navigation");
+var stickyNav = nav.offsetTop;
+
+function fixTopElements() {
+  if (window.pageYOffset > stickyHeader) {
+    header.classList.add("sticky-header");
+    nav.classList.add("sticky-nav");
+  } else {
+    header.classList.remove("sticky-header");
+    nav.classList.remove("sticky-nav");
+  }
+}
+
+</script>
 	</body>
 </html>
