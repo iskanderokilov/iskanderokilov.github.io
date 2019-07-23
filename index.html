@@ -1140,12 +1140,10 @@ jQuery('.contact-btn').click(function(){
     <script>
 window.onscroll = function() {fixTopElements()};
 var header = document.getElementById("fix-on-scroll-header");
-var stickyHeader = header.offsetTop;
 var nav = document.getElementById("navigation");
-var stickyNav = nav.offsetTop;
 
 function fixTopElements() {
-  if (window.pageYOffset > stickyHeader) {
+  if (window.pageYOffset > 33) { // 33px ist die Höhe vom header-top - Leiste
     header.classList.add("sticky-header");
     nav.classList.add("sticky-nav");
   } else {
@@ -1153,7 +1151,6 @@ function fixTopElements() {
     nav.classList.remove("sticky-nav");
   }
 }
-
 </script>
 	</body>
 </html>
