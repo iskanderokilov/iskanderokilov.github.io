@@ -232,17 +232,19 @@ header {
 			}
 		}
 	}
-	@media(max-width: 767px) {
+	@media only screen and (max-width: 767px) {
 		.nav-toggle {
 			display: block;
-		}
-		span.text {
-			display: none;
 		}
 		.block.block-search {
 			display: none;
 		}
 	}
+  @media only screen and (max-width: 991px) {
+    span.text {
+			display: none;
+		}
+  }
 	& .nav-toggle {
 		& span {
 			display: none;
@@ -255,6 +257,9 @@ header {
 			margin: 0 0 30px 10px;
 		}
 	}
+  @media only screen and (max-width: 767px) {
+    padding-top: 10px;
+  }
 }
 }
 
