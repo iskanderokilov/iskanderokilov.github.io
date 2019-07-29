@@ -1,0 +1,327 @@
+[33m1dcc17a[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m remove test.html
+[33m9db27b6[m[33m ([m[1;33mtag: 1.0.0.4[m[33m)[m add test.html
+[33m59851e4[m update custom styles
+[33m97abf4e[m[33m ([m[1;33mtag: 1.0.0.3[m[33m, [m[1;33mtag: 1.0.0.2[m[33m)[m update index.html
+[33m622fc29[m[33m ([m[1;33mtag: 1.0.0.1[m[33m)[m update index.html
+[33m0b96d46[m update custom.min.css for sticked header and nav
+[33ma5d116d[m update custom.less for sticked header and nav
+[33madf1962[m update index.html
+[33mb4c0e8e[m add logo mobile file
+[33me3c0ae8[m Update custom.less
+[33md5ba9a0[m Update custom.min.css
+[33m4296e80[m Update custom.less
+[33m1b5be5d[m Update custom.min.css
+[33m0842764[m Update custom.min.css
+[33md2dc66e[m Update custom.less
+[33m0dfac0e[m Update custom.min.css
+[33m0d473be[m Update custom.less
+[33me43b212[m Update index.html
+[33mc8b3864[m Update custom.min.css
+[33m3c34763[m Update custom.less
+[33m0cbed83[m Delete icomoon.eot
+[33m995565d[m Update icon-font files
+[33md6e78c2[m Upload fonts.less
+[33m251e0f4[m Update and rename fonts.css to fonts.min.css
+[33m9cada30[m Update index.html
+[33md1448a8[m delete icons folder
+[33m83f2f8b[m delete warenkorb_files
+[33mf995e03[m Delete shipping-estimation.js.Download
+[33md31d23e[m Delete select.js.Download
+[33m35220c2[m Delete select-shipping-method.js.Download
+[33m37ec6d6[m Delete select-shipping-address.js.Download
+[33md2c7060[m Delete select-payment-method.js.Download
+[33m064cdf6[m Delete select-billing-address.js.Download
+[33m2cb4ca1[m Delete section-config.js.Download
+[33m626dbe0[m Delete searchClick.js.Download
+[33m3fbb04a[m Delete scripts.js.Download
+[33m9918707[m Delete scope.js.Download
+[33m645727e[m Delete rules.js.Download
+[33mf992583[m Delete responsive.js.Download
+[33mcb5d812[m Delete resource-url-manager.js.Download
+[33m9c3d9d5[m Delete resolver.js.Download
+[33m172eda5[m Delete resizable.js.Download
+[33m2b5ad55[m Delete requirejs-config.js.Download
+[33mc61c1c2[m Delete require.js.Download
+[33m01e3cfe[m Delete renderer.js.Download
+[33m4903432[m Delete registry.js.Download
+[33me60f665[m Delete region.js.Download
+[33m5dc5d2a[m Delete range.js.Download
+[33m6e9f5ad[m Delete quote.js.Download
+[33m026c89c[m Delete query-builder.js.Download
+[33m840f788[m Delete proceed-to-checkout.js.Download
+[33m73ebb1d[m Delete print.css
+[33m11863f5[m Delete price.js.Download
+[33mffbf37e[m Delete price-utils.js.Download
+[33m056accb[m Delete postcode-validator.js.Download
+[33mdae3632[m Delete payment-service.js.Download
+[33ma83e2c2[m Delete page-cache.js.Download
+[33m353fced[m Delete owl.carousel.css
+[33mbc0148e[m Delete outer_click.js.Download
+[33m817d27d[m Delete optgroup.js.Download
+[33mac2ec20[m Delete observable_source.js.Download
+[33m04c986e[m Delete observable_array.js.Download
+[33mf4d92e2[m Delete objects.js.Download
+[33maae4900[m Delete new-customer-address.js.Download
+[33m71d4245[m Delete new-address.js.Download
+[33m45c6c6b[m Delete new-address.js(1).Download
+[33m78f1ee6[m Delete moment.js.Download
+[33mdd9cbdf[m Delete modal.js.Download
+[33ma113341[m Delete mixins.js.Download
+[33me3047bc[m Delete misc.js.Download
+[33m755a5c2[m Delete minicart.js.Download
+[33mbb6d66a[m Delete method-list.js.Download
+[33m95ff683[m Delete messages.js.Download
+[33mac90e96[m Delete messages.js(1).Download
+[33mb7b964a[m Delete messageList.js.Download
+[33m4c59a49[m Delete message-pool.js.Download
+[33m50c18a1[m Delete menu.js.Download
+[33m8e57809[m Delete matchMedia.js.Download
+[33m9d05d99[m Delete main.js.Download
+[33m2424250[m Delete main.js(1).Download
+[33m203dc1a[m Delete mage.js.Download
+[33maa00492[m Delete mage-init.js.Download
+[33m372e8bf[m Delete logo_2.png
+[33m698a412[m Delete logger.js.Download
+[33mb257f7f[m Delete logger-utils.js.Download
+[33m3575ede[m Delete local.js.Download
+[33m6bf84fe[m Delete loader.js.Download
+[33m5456b0f[m Delete loader.js(1).Download
+[33m42d5b4b[m Delete links.js.Download
+[33m13331f8[m Delete levels-pool.js.Download
+[33m6251c8b[m Delete layout.js.Download
+[33m38ba3d3[m Delete knockout.js.Download
+[33mdeaebb7[m Delete knockout-repeat.js.Download
+[33m9d90136[m Delete knockout-fast-foreach.js.Download
+[33m84c7e98[m Delete knockout-es5.js.Download
+[33mcc9a8c7[m Delete keyboard.js.Download
+[33m93fb0ce[m Delete key-codes.js.Download
+[33mec60bd7[m Delete jquery.validate.js.Download
+[33mfd607a2[m Delete jquery.storageapi.min.js.Download
+[33md9b861d[m Delete jquery.mobile.custom.js.Download
+[33mdec6969[m Delete jquery.metadata.js.Download
+[33mfa40352[m Delete jquery.js.Download
+[33m6658960[m Delete jquery.js(1).Download
+[33m8dd5b1c[m Delete jquery.fancybox.css
+[33m0f28007[m Delete jquery.cookie.js.Download
+[33mb7a69cd[m Delete jquery-ui.js.Download
+[33mf8816ee[m Delete jquery-ui.js(1).Download
+[33m04f93eb[m Delete jquery-ui-timepicker-addon.js.Download
+[33mf0d6b91[m Delete jquery-migrate.js.Download
+[33m4a42c03[m Delete invalidation-processor.js.Download
+[33mc54e8da[m Delete image.js.Download
+[33mff05115[m Delete ie-class-fixer.js.Download
+[33m6d180ab[m Delete ids-storage.js.Download
+[33m5e10517[m Delete ids-storage-compare.js.Download
+[33mbe86577[m Delete i18n.js.Download
+[33m0a3c482[m Delete grand-total.js.Download
+[33m33a2a27[m Delete grand-total.js(1).Download
+[33m38a8a85[m Delete freeshipping.js.Download
+[33m0ebfe01[m Delete freeshipping.js(2).Download
+[33mb57973b[m Delete freeshipping.js(1).Download
+[33m319a9c1[m Delete formatter.js.Download
+[33mea6432a[m Delete form.js.Download
+[33me58c31a[m Delete form-popup-state.js.Download
+[33m5d96c2e[m Delete form-mini.js.Download
+[33m90fb1ed[m Delete font-awesome.min.css
+[33m7cf3614[m Delete flatrate.js.Download
+[33m5b75f26[m Delete flatrate.js(2).Download
+[33mcaae273[m Delete flatrate.js(1).Download
+[33mdf0bff6[m Delete fadeVisible.js.Download
+[33maad67fc[m Delete events.js.Download
+[33m3d0e6bc[m Delete estimate-service.js.Download
+[33m2ef0f2b[m Delete es6-collections.js.Download
+[33m1a2db39[m Delete error-processor.js.Download
+[33m47497b4[m Delete entry.js.Download
+[33m8fe8190[m Delete entry-factory.js.Download
+[33m00f8a08[m Delete engine.js.Download
+[33m4e939cf[m Delete element.js.Download
+[33m4a4e9ff[m Delete dropdown.js.Download
+[33m6de7984[m Delete domReady.js.Download
+[33m3ba8490[m Delete dom-observer.js.Download
+[33m7d1a5a5[m Delete discount.js.Download
+[33m4eaafbb[m Delete discount.js(1).Download
+[33mdc0f27a[m Delete discount-codes.js.Download
+[33m95be961[m Delete default.js.Download
+[33m55f5333[m Delete default-validator.js.Download
+[33m97a6c77[m Delete default-validation-rules.js.Download
+[33mf665fce[m Delete default-post-code-resolver.js.Download
+[33me2a990b[m Delete decorate.js.Download
+[33m8391851[m Delete datepicker.js.Download
+[33mada9a23[m Delete dataPost.js.Download
+[33m5bf3891[m Delete data-storage.js.Download
+[33ma1a44f0[m Delete customer.js.Download
+[33m6434a72[m Delete customer-data.js.Download
+[33m3e5fef2[m Delete customer-data-mixin.js.Download
+[33ma926750[m Delete customer-addresses.js.Download
+[33m604e404[m Delete create-shipping-address.js.Download
+[33m1ac8538[m Delete create-billing-address.js.Download
+[33m295837b[m Delete cookies.js.Download
+[33md23ce9c[m Delete console-output-handler.js.Download
+[33m1d6fdab[m Delete console-logger.js.Download
+[33mfab457f[m Delete confirm.js.Download
+[33meb4d1eb[m Delete compare.js.Download
+[33m8356d00[m Delete common.js.Download
+[33mf597076[m Delete colorbox.css
+[33m3b5e178[m Delete collection.js.Download
+[33m305f5d7[m Delete collapsible.js.Download
+[33mf33e414[m Delete collapsible.js(1).Download
+[33m5564af5[m Delete class.js.Download
+[33me8bfe8a[m Delete checkout-data.js.Download
+[33m6ddcdb7[m Delete checkout-data-resolver.js.Download
+[33mf9561ca[m Delete calendar.js.Download
+[33m073594e[m Delete calendar.css
+[33m7d0f495[m Delete cache.js.Download
+[33ma12b090[m Delete buttons.js.Download
+[33m7e9477f[m Delete brand-filter.js.Download
+[33m238c096[m Delete bound-nodes.js.Download
+[33m1d4169e[m Delete bootstrap.min.css
+[33m365393b[m Delete bootstrap.js.Download
+[33m540a01a[m Delete bootstrap.js(2).Download
+[33m68b9608[m Delete bootstrap.js(1).Download
+[33mb759b21[m Delete blog-m.css
+[33m4628dc4[m Delete blog-custom.css
+[33mefe6dab[m Delete block-loader.js.Download
+[33mfd2451b[m Delete bindings.js.Download
+[33me96ed92[m Delete bind-html.js.Download
+[33mc111cd6[m Delete autoselect.js.Download
+[33mc96e3e1[m Delete autocomplete.js.Download
+[33mdd7442d[m Delete authentication-popup.js.Download
+[33me2af5a8[m Delete async.js.Download
+[33mc2117ca[m Delete arrays.js.Download
+[33ma36eada[m Delete apptrian_subcategories.css
+[33mf685b60[m Delete app.js.Download
+[33mf4020b0[m Delete animate.min.js.Download
+[33m113191c[m Delete animate.min.css
+[33m3ec0fe6[m Delete amShopbyTopFilters.js.Download
+[33m38ce556[m Delete amShopbyResponsive.js.Download
+[33m00af596[m Delete alert.js.Download
+[33m9776aae[m Delete after-render.js.Download
+[33m994cf49[m Delete address.js.Download
+[33ma681a81[m Delete address-list.js.Download
+[33m2fd3e7a[m Delete address-converter.js.Download
+[33me4679cc[m Delete adapter.js.Download
+[33m70e6e45[m Delete abstract.js.Download
+[33m3cbf8ae[m Delete abstract-total.js.Download
+[33m64111ab[m Delete MutationObserver.js.Download
+[33m21cee82[m Delete FormData.js.Download
+[33mbbd00e7[m Delete 040-300bk-l_2.jpg
+[33me2ffb86[m Add files via upload
+[33m6e6684d[m Add files via upload
+[33m894b156[m Add files via upload
+[33m4461023[m Add files via upload
+[33me6fdc01[m Add files via upload
+[33m954c797[m Add files via upload
+[33md268e02[m Add files via upload
+[33m72da6bf[m Delete sprite_icons2.svg
+[33m6afbf7e[m Delete icons.svg
+[33m3225d2d[m Delete icon3.jpg
+[33ma8d53ff[m Delete icon2.jpg
+[33mc4afde5[m Delete icon1.jpg
+[33me38424a[m Delete preview.jpg
+[33mde0d750[m Update index.html
+[33m9eb68f7[m add lazyload.min.js
+[33m3deb49a[m Update index.html
+[33m2751ce2[m Update custom_for_prod.less
+[33m470cb7b[m Update custom.less
+[33m3b2d820[m Add files via upload
+[33mcf22622[m Add files via upload
+[33m3f2e6cd[m Add files via upload
+[33m8493806[m Add files via upload
+[33m6a7df80[m Delete wetter-etiketten3.jpg
+[33m986a7f5[m Delete wetter-etiketten1.jpg
+[33mfc35610[m Delete versand-etiketten3.jpg
+[33m6c774cd[m Delete versand-etiketten1.jpg
+[33m82a2f8b[m Delete rolle1.jpg
+[33m0b33c98[m Delete product4.jpg
+[33mddc7b84[m Delete product3.jpg
+[33mb6db3a4[m Delete product2.jpg
+[33m33ab1ac[m Delete product1.jpg
+[33m00eba02[m Delete lager-etiketten3.jpg
+[33m060c466[m Delete lager-etiketten1.jpg
+[33m1759e1c[m Delete inventar-etiketten3.jpg
+[33mc76e97a[m Delete industrie-etiketten3.jpg
+[33m4bca6cc[m Delete industrie-etiketten1.jpg
+[33mad48d10[m Add files via upload
+[33m9979c92[m Add files via upload
+[33m3695ec5[m Add files via upload
+[33m2861464[m Add files via upload
+[33mbc507e1[m Delete hero.jpg
+[33me692c34[m Add files via upload
+[33m166a623[m Add files via upload
+[33m08e512d[m Add files via upload
+[33m9df1430[m Update custom_for_prod.min.css
+[33mc0d293c[m Update custom.min.css
+[33ma497367[m Update index.html
+[33mc468306[m Delete Warenkorb.html
+[33ma858e3c[m update cart files folder
+[33ma298be2[m Update cart files folder
+[33m8da60f8[m Update cart files folder
+[33m89d2d35[m add cart files
+[33me585bb2[m Delete Warenkorb.html
+[33m34ba788[m add cart
+[33m1a597fa[m Update index.html
+[33md0ebf25[m Update custom_for_prod.less
+[33m1b2b5d4[m Update custom.less
+[33md1f046b[m Update custom.min.css
+[33m37b052e[m Update custom_for_prod.min.css
+[33m3c0e8a2[m updoad product images
+[33me311fab[m Update custom_for_prod.min.css
+[33m386d67a[m Update custom_for_prod.min.css
+[33m89bd255[m Update custom_for_prod.min.css
+[33m811c16f[m Update custom_for_prod.min.css
+[33mcf1a2f9[m Update custom_for_prod.min.css
+[33mab48f77[m Update custom_for_prod.min.css
+[33m088e226[m Update custom_for_prod.min.css
+[33m5a29363[m Update custom_for_prod.min.css
+[33m4b0f59c[m Update custom_for_prod.min.css
+[33m80cf353[m Update custom_for_prod.min.css
+[33m219eedf[m Update custom_for_prod.min.css
+[33m69e477a[m Update custom_for_prod.min.css
+[33mdccf02d[m Update custom_for_prod.min.css
+[33m8c9f4ed[m Update custom_for_prod.min.css
+[33m93fc4b4[m Update custom_for_prod.min.css
+[33m3ceafb9[m Update custom_for_prod.min.css
+[33mba342ab[m Update custom_for_prod.min.css
+[33m3ebd47e[m Update custom.min.css
+[33ma086f5e[m Update index.html
+[33m36c9434[m update custom_for_prod.min.css
+[33mfb1b4af[m Update custom.min.css
+[33m98aa6f6[m update custom_for_prod.less
+[33m0ceaa84[m Update custom.less
+[33m076f52b[m replace font files
+[33mea7e45d[m add products img's
+[33m9479325[m Updoad logo
+[33mf431d4e[m Update index.html
+[33m16e29bb[m Update fonts.css
+[33m89c9f28[m Upload custom_for_prod.min.css
+[33m08b00e4[m Update custom.min.css
+[33m845190a[m Update custom.less
+[33mc97dc5b[m rename
+[33me9e3dca[m updoad custom_for_prod.less
+[33mfab52aa[m Update custom.min.css
+[33ma8aaab7[m Update custom.min.css
+[33m57716ba[m Update custom.min.css
+[33m33bef9b[m Update custom.min.css
+[33m9214caf[m Update custom.min.css
+[33m4e15ed8[m Update index.html
+[33m3cd508e[m Update index.html
+[33m6a539a6[m Update fonts
+[33m42e29b3[m Update fonts.css
+[33m7179425[m Update custom.less
+[33m6a04c17[m Update index.html
+[33m22229df[m Upload icomoon font files
+[33mf80fd6e[m Updoad fonts.css
+[33m94e896b[m Update custom.min.css
+[33m326888b[m Update main.min.css
+[33m762d74a[m upload sprite icons svg
+[33m8d11a28[m upload svg sprite-icons
+[33m17be013[m Update custom.min.css
+[33m28d6817[m Update custom.min.css
+[33m50b4760[m Update custom.min.css
+[33m9b71bf4[m Update images
+[33m4f65269[m Update custom.min.css
+[33m2365c40[m Update main.min.css
+[33m4e4e453[m update index.html
+[33meb7d1d0[m Update custom.mim.css
+[33me661605[m Update custom.sass
+[33m32a8e7f[m uploading start template for tt
